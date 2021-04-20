@@ -6,14 +6,14 @@ import commonStyle from "./commonStyle.module.css"
 
 export default function AddHotel() {
 
-   /* const hotel6 = {
-        hotelId: 6,
-        hotelName: "A2B3",
-        hotelType: "Super3",
-        hotelDescription: "Five Stars3",
-        address: "chennai3",
-        rent: 1003.0
-    }*/
+   /*  const hotel6 = {
+         hotelId: 6,
+         hotelName: "A2B3",
+         hotelType: "Super3",
+         hotelDescription: "Five Stars3",
+         address: "chennai3",
+         rent: 1003.0
+     }*/
 
     const hotelNameRef = React.createRef();
     const hotelTypeRef = React.createRef();
@@ -21,15 +21,15 @@ export default function AddHotel() {
     const addressRef = React.createRef();
     const rentRef = React.createRef();
 
+    const response = { hotel: undefined, errMsg: undefined };
+
     const initialState = {
         hotelName: undefined,
         hotelType: undefined,
         hotelDescription: undefined,
         address: undefined,
         rent: undefined,
-        hotel: undefined,
-        errMsg: undefined,
-        formStatus: "",
+        formStatus: ""
     };
 
     const [currentState, setNewState] = useState(initialState);
@@ -37,7 +37,9 @@ export default function AddHotel() {
     const submitHandler = (event) => {
 
         event.preventDefault();
-        setNewState({ ...currentState, formStatus: "form submitted successfully" });
+        //setNewState({ ...currentState, formStatus: "form submitted successfully" });
+        let formData = { ...currentState };
+        console.log("form data that has to be sent to service", formData);
 
     };
 
@@ -45,11 +47,11 @@ export default function AddHotel() {
 
         const fieldName = ref.current.name;
         const fieldValue = ref.current.value;
+        console.log("inside set field state field name = " + fieldName + " fieldValue= " + fieldValue);
         const newState = {
 
             ...currentState,
             [fieldName]: fieldValue,
-            hotel:undefined,
             errMsg: undefined,
         };
 
@@ -63,70 +65,85 @@ export default function AddHotel() {
             <form onSubmit={(event) => submitHandler(event)}>
                 <div>
                     <label>Enter Hotel Name</label>
-                    <input
+                    <select
                         name="hotelName"
                         type="text"
                         ref={hotelNameRef}
-                        onChange={() => setFieldState(hotelNameRef)}
-                    />
+                        onChange={() => setFieldState(hotelNameRef)}>
+                        <option value="guhantara">Guhantara</option>
+                        <option value="leela_palace">Leela_Palace</option>
+                    </select>
                 </div>
+
                 <div>
                     <label>Enter Hotel Type </label>
-                    <input
+                    <select
                         name="hotelType"
                         type="text"
                         ref={hotelTypeRef}
-                        onChange={() => setFieldState(hotelTypeRef)}
-                    />
+                        onChange={() => setFieldState(hotelTypeRef)}>
+                        <option value="three_star">Three_Star</option>
+                        <option value="four_star">Four_Star</option>
+                    </select>
                 </div>
+
                 <div>
                     <label>Enter HotelDescription</label>
-                    <input
+                    <select
                         name="hotelDescription"
                         type="text"
                         ref={hotelDescriptionRef}
-                        onChange={() => setFieldState(hotelDescriptionRef)}
-                    />
+                        onChange={() => setFieldState(hotelDescriptionRef)}>
+                        <option value="authentic_relaxing">Authentic_Relaxing</option>
+                        <option value="luxurious_sparkling">Luxurious_Sparkling</option>
+                    </select>
                 </div>
+
                 <div>
                     <label>Enter Hotel Address</label>
-                    <input
+                    <select
                         name="address"
                         type="text"
                         ref={addressRef}
-                        onChange={() => setFieldState(addressRef)}
-                    />
+                        onChange={() => setFieldState(addressRef)}>
+                        <option value="kanakapura">Kanakapura</option>
+                        <option value="kodihalli">KodiHalli</option>
+                    </select>
                 </div>
+
                 <div>
                     <label>Enter Hotel Rent</label>
-                    <input
+                    <select
                         name="rent"
                         type="number"
                         ref={rentRef}
-                        onChange={() => setFieldState(rentRef)}
-                    />
+                        onChange={() => setFieldState(rentRef)}>
+                        <option value="4720.0">4720.0</option>
+                        <option value="5720.0">5720.0</option>
+                    </select>
                     <br />
                     <button type="submit">Add Hotel</button>
                 </div>
+
             </form>
             <h2>{currentState.formStatus}</h2>
 
             {
-                currentState.hotel ? (
+                response.hotel ? (
 
                     <div>
                         <h2>Hotel Added Successfully</h2>
-                        <DisplayHotelDetails hotel={currentState.hotel} />
+                        <DisplayHotelDetails hotel={response.hotel} />
                     </div>
 
                 ) : ""}
 
             {
-                currentState.errMsg ? (
+                response.errMsg ? (
 
                     <div className={commonStyle.error}>
                         Hotel Request Was Not Successful <br />
-                        {currentState.errMsg}
+                        {response.errMsg}
                     </div>
 
                 ) : ""}
