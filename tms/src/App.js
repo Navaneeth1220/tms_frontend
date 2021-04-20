@@ -7,6 +7,7 @@ import AddHotel from './component/Hotel/AddHotel';
 import DisplayPackageDetails from './component/Package/DisplayPackageDetails';
 import GetPackageDetails from './component/Package/GetPackageDetails';
 import DisplayPackageList from './component/Package/DisplayPackageList';
+import AddPackage from './component/Package/AddPackage';
 
 function App() {
 
@@ -38,55 +39,55 @@ function App() {
    }
    const hotels = [hotel1, hotel2, hotel3];*/
 
-/*  const pack1 = {
-
-    packageId: 1,
-    packageName: "holiday1",
-    packageDescription: "Cool1",
-    packageType: "Legend1",
-    packageCost: 5000.0,
-    hotelId: 13,
-    hotelName: "A2B13",
-    hotelType: "Super13",
-    hotelDescription: "Five Stars13",
-    address: "chennai13",
-    rent: 1013.0,
-    hotelStatus: "Available"
-  }
-
-  const pack2 = {
-
-    packageId: 2,
-    packageName: "holiday2",
-    packageDescription: "Cool2",
-    packageType: "Legend2",
-    packageCost: 5001.0,
-    hotelId: 12,
-    hotelName: "A2B12",
-    hotelType: "Super12",
-    hotelDescription: "Five Stars12",
-    address: "chennai12",
-    rent: 1012.0,
-    hotelStatus: "Available"
-  }
-
-  const pack3 = {
-
-    packageId: 3,
-    packageName: "holiday3",
-    packageDescription: "Cool3",
-    packageType: "Legend3",
-    packageCost: 5002.0,
-    hotelId: 11,
-    hotelName: "A2B11",
-    hotelType: "Super11",
-    hotelDescription: "Five Stars11",
-    address: "chennai11",
-    rent: 1011.0,
-    hotelStatus: "Available"
-  }
-
-  const packs = [pack1, pack2, pack3];*/
+  /*  const pack1 = {
+  
+      packageId: 1,
+      packageName: "holiday1",
+      packageDescription: "Cool1",
+      packageType: "Legend1",
+      packageCost: 5000.0,
+      hotelId: 13,
+      hotelName: "A2B13",
+      hotelType: "Super13",
+      hotelDescription: "Five Stars13",
+      address: "chennai13",
+      rent: 1013.0,
+      hotelStatus: "Available"
+    }
+  
+    const pack2 = {
+  
+      packageId: 2,
+      packageName: "holiday2",
+      packageDescription: "Cool2",
+      packageType: "Legend2",
+      packageCost: 5001.0,
+      hotelId: 12,
+      hotelName: "A2B12",
+      hotelType: "Super12",
+      hotelDescription: "Five Stars12",
+      address: "chennai12",
+      rent: 1012.0,
+      hotelStatus: "Available"
+    }
+  
+    const pack3 = {
+  
+      packageId: 3,
+      packageName: "holiday3",
+      packageDescription: "Cool3",
+      packageType: "Legend3",
+      packageCost: 5002.0,
+      hotelId: 11,
+      hotelName: "A2B11",
+      hotelType: "Super11",
+      hotelDescription: "Five Stars11",
+      address: "chennai11",
+      rent: 1011.0,
+      hotelStatus: "Available"
+    }
+  
+    const packs = [pack1, pack2, pack3];*/
 
   return (
 
@@ -102,11 +103,11 @@ function App() {
 
       {/*<DisplayPackageDetails pack={pack1} />*/}
 
-      {<GetPackageDetails />}
+      {/*<GetPackageDetails />*/}
 
       {/*<DisplayPackageList packs = {packs} />*/}
 
-      {}
+      {<AddPackage />}
 
 
 
