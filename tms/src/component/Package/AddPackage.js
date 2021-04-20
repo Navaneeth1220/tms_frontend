@@ -5,14 +5,15 @@ import commonStyle from "./commonStyle.module.css"
 
 export default function AddPackage() {
 
-     /*const pack6 = {
-       packageName: "Holiday6",
-       packageDescription: "Cool6",
-       packageType: "Legend6",
-       packageCost: 12200.0,
-       hotelId: 6,
-       
-   }*/
+    const pack6 = {
+
+        packageName: "Holiday6",
+        packageDescription: "Cool6",
+        packageType: "Legend6",
+        packageCost: 12200.0,
+        hotelId: 6,
+
+    }
 
     const packageNameRef = React.createRef();
     const packageDescriptionRef = React.createRef();
@@ -20,14 +21,14 @@ export default function AddPackage() {
     const packageCostRef = React.createRef();
     const hotelIdRef = React.createRef();
 
+    const response = { pack: pack6, errMsg: undefined };
+
     const initialState = {
         packageName: undefined,
         packageDescription: undefined,
         packageType: undefined,
         packageCost: undefined,
         hotelId: undefined,
-        pack: undefined,
-        errMsg: undefined,
         formStatus: "",
     };
 
@@ -36,7 +37,9 @@ export default function AddPackage() {
     const submitHandler = (event) => {
 
         event.preventDefault();
-        setNewState({ ...currentState, formStatus: "form submitted successfully" });
+        //setNewState({ ...currentState, formStatus: "form submitted successfully" });
+        let formData = { ...currentState };
+        console.log("form data that has to be sent to service", formData)
 
     };
 
@@ -48,7 +51,6 @@ export default function AddPackage() {
 
             ...currentState,
             [fieldName]: fieldValue,
-            pack: undefined,
             errMsg: undefined,
         };
 
@@ -62,70 +64,85 @@ export default function AddPackage() {
             <form onSubmit={(event) => submitHandler(event)}>
                 <div>
                     <label>Enter Package Name</label>
-                    <input
+                    <select
                         name="packageName"
                         type="text"
                         ref={packageNameRef}
-                        onChange={() => setFieldState(packageNameRef)}
-                    />
+                        onChange={() => setFieldState(packageNameRef)}>
+                        <option value="local">Local</option>
+                        <option value="national">National</option>
+                    </select>
                 </div>
+
                 <div>
                     <label>Enter Package Description </label>
-                    <input
+                    <select
                         name="packageDescription"
                         type="text"
                         ref={packageDescriptionRef}
-                        onChange={() => setFieldState(packageDescriptionRef)}
-                    />
+                        onChange={() => setFieldState(packageDescriptionRef)}>
+                        <option value="diverse_cultural">Diverse_Cultural</option>
+                        <option value="challenging_adventure">Challenging_Adventure</option>
+                    </select>
                 </div>
+
                 <div>
                     <label>Enter Package Type</label>
-                    <input
+                    <select
                         name="packageType"
                         type="text"
                         ref={packageTypeRef}
-                        onChange={() => setFieldState(packageTypeRef)}
-                    />
+                        onChange={() => setFieldState(packageTypeRef)}>
+                        <option value="normal">Normal</option>
+                        <option value="ultra">Ultra</option>
+                    </select>
                 </div>
+
                 <div>
-                    <label>Enter Hotel Cost</label>
-                    <input
+                    <label>Enter Package Cost</label>
+                    <select
                         name="packageCost"
                         type="number"
                         ref={packageCostRef}
-                        onChange={() => setFieldState(packageCostRef)}
-                    />
+                        onChange={() => setFieldState(packageCostRef)}>
+                        <option value="8500.0">8500.0</option>
+                        <option value="10500.0">10500.0</option>
+                    </select>
                 </div>
+
                 <div>
                     <label>Enter Hotel Id</label>
-                    <input
+                    <select
                         name="hotelId"
                         type="number"
                         ref={hotelIdRef}
-                        onChange={() => setFieldState(hotelIdRef)}
-                    />
+                        onChange={() => setFieldState(hotelIdRef)}>
+                        <option value="1">1</option>
+                        <option value="3">3</option>
+                    </select>
                     <br />
+
                     <button type="submit">Add Package</button>
                 </div>
             </form>
             <h2>{currentState.formStatus}</h2>
 
             {
-                currentState.pack ? (
+                response.pack ? (
 
                     <div>
                         <h2>Package Added Successfully</h2>
-                        <DisplayPackageDetails pack={currentState.pack} />
+                        <DisplayPackageDetails pack={response.pack} />
                     </div>
 
                 ) : ""}
 
             {
-                currentState.errMsg ? (
+                response.errMsg ? (
 
                     <div className={commonStyle.error}>
                         Package Request Was Not Successful <br />
-                        {currentState.errMsg}
+                        {response.errMsg}
                     </div>
 
                 ) : ""}
