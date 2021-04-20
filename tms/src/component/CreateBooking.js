@@ -6,25 +6,26 @@ import errorStyle from "./errorStyle.module.css"
 
 export default function CreateBooking(){
 
-    /*const booking1 = {
-        bookingTitle : "weekend",
-        bookingType : "Executive",
-        bookingDescription :"Expensive",
+    const booking = {
+        title : "weekend",
+        type : "Executive",
+        description :"Expensive",
+        bookId:545,
         userId : 1
-    }*/
+    };
 
     const bookingTitleRef = React.createRef();
     const bookingTypeRef = React.createRef();
     const bookingDescriptionRef = React.createRef();
     const userIdRef = React.createRef();
 
+    const response={booking:booking, errMsg:undefined };
+
     const initialState = {
         bookingType : undefined,
         bookingTitle : undefined,
         bookingDescription : undefined,
         userId : undefined,
-        booking : undefined,
-        errMsg : undefined,
         formStatus : "",
     };
 
@@ -32,7 +33,9 @@ export default function CreateBooking(){
 
     const submitHandler = (event) =>{
         event.preventDefault();
-        setNewState({...currentState,formStatus:"Form submitted"});
+//        setNewState({...currentState,formStatus:"Form submitted"});
+        let formData={...currentState};
+        console.log("form data that has to be sent to service",formData);
     };
 
     const setFieldState = (ref) =>{
@@ -43,7 +46,6 @@ export default function CreateBooking(){
 
             ...currentState,
             [fieldName] : fieldValue,
-            booking : undefined,
             errMsg : undefined,
         };
 
@@ -84,20 +86,20 @@ export default function CreateBooking(){
 
 
             {
-                currentState.booking ? (
+               response.booking ? (
 
                     <div>
                         <h2>Booking successful</h2>
-                        <DisplayBookingDetails booking = {currentState.booking}/>
+                        <DisplayBookingDetails book = {response.booking}/>
                     </div>
                 ) : ""
             }
 
             {
-                currentState.errMsg ? (
+                response.errMsg ? (
                     <div className={errorStyle.error}>
 
-                        {currentState.errMsg}
+                        {response.errMsg}
                     </div>
                 ) : ""
 
