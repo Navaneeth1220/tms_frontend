@@ -38,7 +38,7 @@ function App() {
    }
    const hotels = [hotel1, hotel2, hotel3];*/
 
-  const pack1 = {
+/*  const pack1 = {
 
     packageId: 1,
     packageName: "holiday1",
@@ -86,7 +86,7 @@ function App() {
     hotelStatus: "Available"
   }
 
-  const packs = [pack1, pack2, pack3];
+  const packs = [pack1, pack2, pack3];*/
 
   return (
 
@@ -98,13 +98,15 @@ function App() {
 
       {/*<DisplayHotelList hotels={hotels} />*/}
 
-      {/*<AddHotel />*/}
+      {<AddHotel />}
 
       {/*<DisplayPackageDetails pack={pack1} />*/}
 
       {/*<GetPackageDetails />*/}
 
-      {<DisplayPackageList packs = {packs} />}
+      {/*<DisplayPackageList packs = {packs} />*/}
+
+      {}
 
 
 
