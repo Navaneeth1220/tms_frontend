@@ -9,7 +9,8 @@ export default function GetBookingDetails(){
         bookId : 1,
         type : "Trip",
         description : "family trip",
-        title : "Vacation"
+        title : "Vacation",
+        userId : 2
       };
 
       const bookingIdRef = React.createRef();

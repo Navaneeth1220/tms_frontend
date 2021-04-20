@@ -1,6 +1,6 @@
 export default function DisplayBookingDetails({book}){
 
-    let {bookId,type,description,title} = book;
+    let {bookId,type,description,title,userId} = book;
 
     return (
        
@@ -13,6 +13,8 @@ export default function DisplayBookingDetails({book}){
             Booking description is {description}
             <br/>
             Booking title is {title}
+            <br/>
+            Booking user Id is {userId}
             <br/>
         </div>
     );
