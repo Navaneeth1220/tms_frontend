@@ -102,7 +102,7 @@ function App() {
 
       {/*<DisplayPackageDetails pack={pack1} />*/}
 
-      {/*<GetPackageDetails />*/}
+      {<GetPackageDetails />}
 
       {/*<DisplayPackageList packs = {packs} />*/}
 
