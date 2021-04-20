@@ -6,14 +6,14 @@ import commonStyle from "./commonStyle.module.css"
 
 export default function AddHotel() {
 
-   /*  const hotel6 = {
-         hotelId: 6,
-         hotelName: "A2B3",
-         hotelType: "Super3",
-         hotelDescription: "Five Stars3",
-         address: "chennai3",
-         rent: 1003.0
-     }*/
+    /*  const hotel6 = {
+          hotelId: 6,
+          hotelName: "A2B3",
+          hotelType: "Super3",
+          hotelDescription: "Five Stars3",
+          address: "chennai3",
+          rent: 1003.0
+      }*/
 
     const hotelNameRef = React.createRef();
     const hotelTypeRef = React.createRef();
@@ -70,6 +70,7 @@ export default function AddHotel() {
                         type="text"
                         ref={hotelNameRef}
                         onChange={() => setFieldState(hotelNameRef)}>
+                        <option disabled selected>Select Hotel Name</option>
                         <option value="guhantara">Guhantara</option>
                         <option value="leela_palace">Leela_Palace</option>
                     </select>
@@ -82,6 +83,7 @@ export default function AddHotel() {
                         type="text"
                         ref={hotelTypeRef}
                         onChange={() => setFieldState(hotelTypeRef)}>
+                        <option disabled selected>Select Hotel Type</option>
                         <option value="three_star">Three_Star</option>
                         <option value="four_star">Four_Star</option>
                     </select>
@@ -94,6 +96,7 @@ export default function AddHotel() {
                         type="text"
                         ref={hotelDescriptionRef}
                         onChange={() => setFieldState(hotelDescriptionRef)}>
+                        <option disabled selected>Select Hotel Description</option>
                         <option value="authentic_relaxing">Authentic_Relaxing</option>
                         <option value="luxurious_sparkling">Luxurious_Sparkling</option>
                     </select>
@@ -106,6 +109,7 @@ export default function AddHotel() {
                         type="text"
                         ref={addressRef}
                         onChange={() => setFieldState(addressRef)}>
+                        <option disabled selected>Select Hotel Address</option>
                         <option value="kanakapura">Kanakapura</option>
                         <option value="kodihalli">KodiHalli</option>
                     </select>
@@ -118,6 +122,7 @@ export default function AddHotel() {
                         type="number"
                         ref={rentRef}
                         onChange={() => setFieldState(rentRef)}>
+                        <option disabled selected>Select Hotel Rent</option>
                         <option value="4720.0">4720.0</option>
                         <option value="5720.0">5720.0</option>
                     </select>

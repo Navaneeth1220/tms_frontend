@@ -5,7 +5,7 @@ import commonStyle from "./commonStyle.module.css"
 
 export default function GetPackageDetails() {
 
-   let mockPackage = {
+   /*let mockPackage = {
 
         packageId: 1,
         packageName: "holiday1",
@@ -19,11 +19,11 @@ export default function GetPackageDetails() {
         address: "chennai",
         rent: 1000.0,
         hotelStatus: "Available"
-    };
+    };*/
 
     const packageIdRef = React.createRef();
 
-    const initialState = { packageId: undefined, pack: mockPackage, errMsg: undefined };
+    const initialState = { packageId: undefined, pack: undefined, errMsg: undefined };
 
     const [currentState, setNewState] = useState(initialState);
 
