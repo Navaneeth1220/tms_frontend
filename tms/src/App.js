@@ -3,6 +3,7 @@ import './App.css';
 import DisplayHotelDetails from './component/Hotel/DisplayHotelDetails';
 import GetHotelDetails from './component/Hotel/GetHotelDetails';
 import DisplayHotelList from './component/Hotel/DisplayHotelList';
+import AddHotel from './component/Hotel/AddHotel';
 
 function App() {
 
@@ -41,8 +42,12 @@ function App() {
     <div>
 
       {/* <DisplayHotelDetails hotel={hotel1} />*/}
+
       {/*<GetHotelDetails />*/}
-      {<DisplayHotelList hotels={hotels} />}
+
+      {/*<DisplayHotelList hotels={hotels} />*/}
+
+      {<AddHotel />}
 
 
 
