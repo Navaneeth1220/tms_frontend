@@ -9,18 +9,18 @@ import commonStyle from "./commonStyle.module.css"
 
 export default function GetHotelDetails() {
 
-    /*let mockHotel = {
+    let mockHotel = {
         hotelId: 5,
         hotelName: "A2B",
         hotelType: "Super",
         hotelDescription: "Five Stars",
         address: "chennai",
         rent: 1000.0
-    };*/
+    };
 
     const hotelIdRef = React.createRef();
 
-    const initialState = { hotelId: undefined, hotel: undefined, errMsg: undefined };
+    const initialState = { hotelId: undefined, hotel: mockHotel, errMsg: undefined };
 
     const [currentState, setNewState] = useState(initialState);
 
@@ -32,7 +32,7 @@ export default function GetHotelDetails() {
 
     const setFieldState = () => {
 
-        const hotelIdValue = hotelIdRef.current.hotelIdValue;
+        const hotelIdValue = hotelIdRef.current.value;
         const newState = { ...currentState, hotelId: hotelIdValue };
         setNewState(newState);
 

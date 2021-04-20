@@ -94,11 +94,11 @@ function App() {
 
       {/* <DisplayHotelDetails hotel={hotel1} />*/}
 
-      {/*<GetHotelDetails />*/}
+      {<GetHotelDetails />}
 
       {/*<DisplayHotelList hotels={hotels} />*/}
 
-      {<AddHotel />}
+      {/*<AddHotel />*/}
 
       {/*<DisplayPackageDetails pack={pack1} />*/}
 
