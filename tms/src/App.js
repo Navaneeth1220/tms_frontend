@@ -1,23 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
+import DisplayBookingDetails from './component/DisplayBookingDetails';
+import GetBookingDetails from './component/GetBookingDetails';
+import DisplayBookingList from './component/DisplayBookingList';
 
 function App() {
+
+let mockBooking = {
+  bookId : 1,
+  type : "Trip",
+  description : "family trip",
+  title : "Vacation"
+}
+
+const book1= {
+  bookId : 1,
+  type : "Trip",
+  description : "family trip",
+  title : "Vacation"
+}
+
+const book2= {
+  bookId : 2,
+  type : "Trip",
+  description : "family trip",
+  title : "Vacation"
+}
+
+const bookings = [book1,book2];
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {<DisplayBookingDetails book={mockBooking}/>}
+      {<GetBookingDetails/>}
+      {<DisplayBookingList bookings={bookings}/>}
+
     </div>
   );
 }
