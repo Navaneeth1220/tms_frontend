@@ -49,7 +49,7 @@ export default function AddHotel() {
 
             ...currentState,
             [fieldName]: fieldValue,
-            hotel:undefined,
+            hotel:hotel6,
             errMsg: undefined,
         };
 
