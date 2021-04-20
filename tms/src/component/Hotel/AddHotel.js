@@ -6,14 +6,14 @@ import commonStyle from "./commonStyle.module.css"
 
 export default function AddHotel() {
 
-    const hotel6 = {
+    /*const hotel6 = {
         hotelId: 6,
         hotelName: "A2B3",
         hotelType: "Super3",
         hotelDescription: "Five Stars3",
         address: "chennai3",
         rent: 1003.0
-    }
+    }*/
 
     const hotelNameRef = React.createRef();
     const hotelTypeRef = React.createRef();
@@ -27,7 +27,7 @@ export default function AddHotel() {
         hotelDescription: undefined,
         address: undefined,
         rent: undefined,
-        hotel: hotel6,
+        hotel: undefined,
         errMsg: undefined,
         formStatus: "",
     };
@@ -49,7 +49,7 @@ export default function AddHotel() {
 
             ...currentState,
             [fieldName]: fieldValue,
-            hotel:hotel6,
+            hotel:undefined,
             errMsg: undefined,
         };
 
