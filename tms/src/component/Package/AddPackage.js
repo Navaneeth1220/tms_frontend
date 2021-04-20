@@ -5,14 +5,14 @@ import commonStyle from "./commonStyle.module.css"
 
 export default function AddPackage() {
 
-     const pack6 = {
+     /*const pack6 = {
        packageName: "Holiday6",
        packageDescription: "Cool6",
        packageType: "Legend6",
        packageCost: 12200.0,
        hotelId: 6,
        
-   }
+   }*/
 
     const packageNameRef = React.createRef();
     const packageDescriptionRef = React.createRef();
@@ -26,7 +26,7 @@ export default function AddPackage() {
         packageType: undefined,
         packageCost: undefined,
         hotelId: undefined,
-        pack: pack6,
+        pack: undefined,
         errMsg: undefined,
         formStatus: "",
     };
@@ -48,7 +48,7 @@ export default function AddPackage() {
 
             ...currentState,
             [fieldName]: fieldValue,
-            pack: pack6,
+            pack: undefined,
             errMsg: undefined,
         };
 
