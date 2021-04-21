@@ -3,38 +3,38 @@ import axios from "axios";
 
 const baseUrl = "http://localhost:8181";
 
-function fetchHotelById(hotelId) {
+function fetchPackageById(packageId) {
 
-    const url = baseUrl + "/hotels/byid/" + hotelId;
+    const url = baseUrl + "/packages/byid/" + packageId;
     const promise = axios.get(url);
     return promise;
 
 }
 
-function addHotel(data) {
+function addPackage(data) {
 
-    const url = baseUrl + "/hotels/add";
+    const url = baseUrl + "/packages/add";
     let requestData = {
 
-        hotelName: data.hotelName,
-        hotelDescription: data.hotelDescription,
-        hotelType: data.hotelType,
-        address: data.address,
-        rent: data.rent
+        packageName: data.packageName,
+        packageDescription: data.packageDescription,
+        packageType: data.packageType,
+        packageCost: data.packageCost,
+        hotelId: data.hotelId
     };
 
-    console.log("inside addHotel service, request data", requestData);
+    console.log("inside addPackage service, request data", requestData);
     const promise = axios.post(url, requestData);
     return promise;
 
 }
 
-function fetchAllHotels() {
+function fetchAllPackages() {
 
-    const url = baseUrl + "/hotels";
+    const url = baseUrl + "/packages";
     const promise = axios.get(url);
     return promise;
 
 }
 
-export { fetchHotelById, addHotel, fetchAllHotels };
+export { fetchPackageById, addPackage, fetchAllPackages };
