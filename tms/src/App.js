@@ -1,23 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+import AddReport from './components/AddReport';
+import DisplayReportDetails from './components/DisplayReportDetails';
+import DisplayReportList from './components/DisplayReportList';
+import GetReportDetails from './components/GetReportDetails';
 
 function App() {
+
+  const report1={
+    reportId :"1",
+    reportName:"GoaTrip",
+    reportType:"accounts"
+
+  }
+  const report2={
+    reportId :"2",
+    reportName:"PuneTrip",
+    reportType:"hotel details"
+
+  }
+
+  const reports =[report1,report2];
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      {/*<AddReport/>*/}
+      {/*<DisplayReportDetails report={report1}/>*/}
+     {/*<DisplayReportList reports={reports}/>*/}
+     {<GetReportDetails/>}
     </div>
   );
 }
