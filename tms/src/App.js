@@ -24,10 +24,10 @@ function App() {
   
   return (
     <div >
-      {/*<AddReport/>*/}
+      {<AddReport/>}
       {/*<DisplayReportDetails report={report1}/>*/}
      {/*<DisplayReportList reports={reports}/>*/}
-     {<GetReportDetails/>}
+     {/*<GetReportDetails>*/}
     </div>
   );
 }

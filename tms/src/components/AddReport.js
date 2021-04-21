@@ -32,6 +32,7 @@ export default function AddReport() {
 
         const fieldName = ref.current.name;
         const fieldValue = ref.current.value;
+        console.log("inside set field state field name = " + fieldName + " fieldValue= " + fieldValue);
         const newState = {
 
             ...currentState,
@@ -66,9 +67,10 @@ export default function AddReport() {
                         type="text"
                         ref={reporttypeRef}
                         onChange={() => setFieldState(reporttypeRef)}>
-                        <option value="good">good</option>
-                        <option value="average">average</option>
-                        <option value="bad">bad</option>
+                            <option disabled selected>Select Report Name</option>
+                        <option value="buisness">Buisness</option>
+                        <option value="operational">Operational</option>
+                        <option value="Accounts">Accounts</option>
                         </select>
                     
                     <br />
