@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import DisplayFeedbackDetails from './component/Feedback/DisplayFeedbackDetails';
+import DisplayFeedbackList from './component/Feedback/DisplayFeedbackList';
+import AddFeedback from './component/Feedback/AddFeedback';
 
 function App() {
+    const feed1 = {
+     feedbackId: 5,
+     customerId:10,
+     customerName: "Ajith",
+     feedback: "Super",
+     rating: 3,
+    
+   }
+
+   const feed2 = {
+    feedbackId: 8,
+    customerId:6,
+    customerName: "Ajay Samuel",
+    feedback: "Super and clean",
+    rating: 5,
+   
+  }
+
+  const feeds=[feed1,feed2];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      
+      { /*<DisplayFeedbackDetails feed={feed1} />*/}
+
+      {/*<DisplayFeedbackList feeds={feeds} />*/}
+      {<AddFeedback />}
     </div>
   );
 }
