@@ -55,6 +55,7 @@ export default function AddFeedback() {
                         type="text"
                         ref={feedbackRef}
                         onChange={() => setFieldState(feedbackRef)}>
+                        <option disabled selected>Select Feedback</option>
                         <option value="Good">Good</option>
                         <option value="Average">Average</option>
                         <option value="Bad">Bad</option>
@@ -68,6 +69,7 @@ export default function AddFeedback() {
                         type="number"
                         ref={customerIdRef}
                         onChange={() => setFieldState(customerIdRef)}>
+                        <option disabled selected>Select customerId</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -81,6 +83,7 @@ export default function AddFeedback() {
                         type="number"
                         ref={ratingRef}
                         onChange={() => setFieldState(ratingRef)}>
+                        <option disabled selected>Select Rating</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -94,21 +97,21 @@ export default function AddFeedback() {
             <h2>{currentState.formStatus}</h2>
 
             {
-                currentState.feed ? (
+                response.feed ? (
 
                     <div>
                         <h2>Feedback Added Successfully</h2>
-                        <DisplayFeedbackDetails feed={currentState.feed} />
+                        <DisplayFeedbackDetails feed={response.feed} />
                     </div>
 
                 ) : ""}
 
             {
-                currentState.errMsg ? (
+                response.errMsg ? (
 
                     <div className={commonStyle.error}>
                         Feedback Request Was Not Successful <br />
-                        {currentState.errMsg}
+                        {response.errMsg}
                     </div>
 
                 ) : ""}

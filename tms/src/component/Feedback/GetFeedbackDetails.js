@@ -50,19 +50,19 @@ export default function GetFeedbackDetails() {
             </form>
 
             {
-                response.feedback ? (
+                currentState.feedback ? (
                     <div>
-                        <DisplayFeedbackDetails feed={response.feed} />
+                        <DisplayFeedbackDetails feed={currentState.feed} />
                     </div>
 
                 ) : ""}
 
             {
-                response.errMsg ? (
+                currentState.errMsg ? (
                     <div className={commonStyle.error}>
                         Feedback Request Processing Unsuccessful
                         <br />
-                        {response.errMsg}
+                        {currentState.errMsg}
                     </div>
                 ) : ""}
         </div>
