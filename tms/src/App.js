@@ -9,6 +9,7 @@ import GetPackageDetails from './component/Package/GetPackageDetails';
 import DisplayPackageList from './component/Package/DisplayPackageList';
 import AddPackage from './component/Package/AddPackage';
 import { addHotel } from './service/HotelService';
+import { addPackage } from './service/PackageService';
 
 function App() {
 
@@ -90,19 +91,33 @@ function App() {
   
     const packs = [pack1, pack2, pack3];*/
 
-  const data = {
+  /* const data1 = {
+ 
+     hotelName: "A2B11",
+     hotelType: "Super11",
+     hotelDescription: "Five Stars11",
+     address: "chennai11",
+     rent: 1011.0
+ 
+   }
+ 
+   const promise = addHotel(data1);
+   promise.then(response => console.log("add hotel request response", response.data))
+     .catch(error => console.log("hotel error response fetched", error.message));*/
 
-    hotelName: "A2B11",
-    hotelType: "Super11",
-    hotelDescription: "Five Stars11",
-    address: "chennai11",
-    rent: 1011.0
+  const data2 = {
+
+    packageName: "National",
+    packageDescription: "Super",
+    packageType: "Four_Star",
+    packageCost: 8500.0,
+    hotelId: 3
 
   }
 
-  const promise = addHotel(data);
-  promise.then(response => console.log("add hotel request response", response.data))
-    .catch(error => console.log("hotel error response fetched", error.message));
+  const promise = addPackage(data2);
+  promise.then(response => console.log("add package request response", response.data))
+    .catch(error => console.log("package error response fetched", error.message));
 
   return (
 

@@ -17,8 +17,8 @@ function addHotel(data) {
     let requestData = {
 
         hotelName: data.hotelName,
-        hotelDescription: data.hotelDescription,
         hotelType: data.hotelType,
+        hotelDescription: data.hotelDescription,
         address: data.address,
         rent: data.rent
     };
