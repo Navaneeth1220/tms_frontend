@@ -20,7 +20,7 @@ export default function AddCustomer() {
     const customerPhonenumberRef = React.createRef();
     const customerEmailRef = React.createRef();
 
-    const response={ customer: undefined,errMsg: undefined };
+    const response = { customer: undefined, errMsg: undefined };
 
     const initialState = {
         customerName: undefined,
@@ -70,7 +70,7 @@ export default function AddCustomer() {
                         type="text"
                         ref={customerNameRef}
                         onChange={() => setFieldState(customerNameRef)}>
-                            <option disabled selected>Select Customer Name</option>
+                        <option disabled selected>Select Customer Name</option>
                         <option value="msp">msp</option>
                         <option value="nava">nava</option>
                         <option value="shiv">shiv</option>
@@ -83,11 +83,11 @@ export default function AddCustomer() {
                         type="text"
                         ref={customerPasswordRef}
                         onChange={() => setFieldState(customerPasswordRef)}>
-                            <option disabled selected>Select Your  Password</option>
+                        <option disabled selected>Select Your  Password</option>
                         <option value="msp24">msp24</option>
                         <option value="nava15">nava15</option>
                         <option value="shiv13">shiv13</option>
-                        </select>
+                    </select>
                 </div>
                 <div>
                     <label>Enter Your Address</label>
@@ -96,11 +96,11 @@ export default function AddCustomer() {
                         type="text"
                         ref={customerAddressRef}
                         onChange={() => setFieldState(customerAddressRef)}>
-                            <option disabled selected>Select customer Address</option>
+                        <option disabled selected>Select customer Address</option>
                         <option value="chennai">chennai</option>
                         <option value="bangalore">bangalore</option>
                         <option value="delhi">delhi</option>
-                        </select>
+                    </select>
                 </div>
                 <div>
                     <label>Enter Your Phonenumber</label>
@@ -109,7 +109,7 @@ export default function AddCustomer() {
                         type="text"
                         ref={customerPhonenumberRef}
                         onChange={() => setFieldState(customerPhonenumberRef)}>
-                            <option disabled selected>Select  Your Phone number</option>
+                        <option disabled selected>Select  Your Phone number</option>
                         <option value="8754489885">8754489885</option>
                         <option value="8754489884">8754489884</option>
                         <option value="8754489883">8754489883</option>
@@ -122,11 +122,11 @@ export default function AddCustomer() {
                         type="text"
                         ref={customerEmailRef}
                         onChange={() => setFieldState(customerEmailRef)}>
-                            <option disabled selected>Select your Email</option>
+                        <option disabled selected>Select your Email</option>
                         <option value="msp@gmail.com">msp@gmail.com</option>
                         <option value="nava@gmail.com">nava@gmail.com</option>
                         <option value="shiv@gmail.com">shiv@gmail.com"</option>
-                    </select>   
+                    </select>
                     <br />
                     <button type="submit">Add Customer</button>
                 </div>
