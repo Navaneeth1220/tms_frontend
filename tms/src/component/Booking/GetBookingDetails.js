@@ -21,10 +21,12 @@ export default function GetBookingDetails(){
 
       const submitHandler = (event) =>{
           event.preventDefault();
+          let formData={...currentState};
+        console.log("form data that has to be sent to service",formData);
       }
 
       const setFieldState=()=>{
-          const bookingIdValue = bookingIdRef.current.bookingIdValue;
+          const bookingIdValue = bookingIdRef.current.value;
           const newState={...currentState,bookId:bookingIdValue};
           setNewState(newState);
       }
@@ -34,7 +36,7 @@ export default function GetBookingDetails(){
         <div>
             <form onSubmit={submitHandler}>
                 <div>
-                    <lable> Enter Booking ID</lable>
+                    <label> Enter Booking ID</label>
                     <input name="bookingId" type="number" ref={bookingIdRef} onChange={setFieldState} />
                     <button>Get Booking Details</button>
                 </div>

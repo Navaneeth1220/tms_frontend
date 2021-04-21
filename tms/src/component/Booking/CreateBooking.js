@@ -57,7 +57,8 @@ export default function CreateBooking(){
             <form onSubmit = {(event)=> submitHandler(event)}>
                 <div>
                     <label>Choose a Booking title </label>
-                    <select name = "bookingTitle" id = "title" ref={bookingTitleRef} onChange={()=>setFieldState(bookingTitleRef)}>  
+                    <select name = "bookingTitle" id = "title" ref={bookingTitleRef} onChange={()=>setFieldState(bookingTitleRef)}> 
+                    <option value="none" disabled selected hidden>Select booking Title</option> 
                         <option value="weekend">Weekend</option>
                         <option value = "week_vacation">7 day Vacation</option>
                     </select>
@@ -66,6 +67,7 @@ export default function CreateBooking(){
                 <div>
                     <label>Choose Booking Type </label>
                     <select name="bookingType" id="type" ref={bookingTypeRef} onChange={()=>setFieldState(bookingTypeRef)}>
+                        <option value="none" disabled selected hidden>Select booking Type</option>
                         <option value="economy">Economy</option>
                         <option value="executive">Executive</option>
                 </select>
@@ -75,7 +77,7 @@ export default function CreateBooking(){
                     <input name="bookingDescription" type="text" ref={bookingDescriptionRef} onChange={()=>setFieldState(bookingDescriptionRef)}/>
                 </div>
                 <div>
-                    <label>Enter your User Id</label>
+                    <label>Enter your User Id </label>
                     <input name="userId" type="number" ref={userIdRef} onChange={()=>setFieldState(userIdRef)}/>
                     <br/>
                     <button type="submit">Make Booking</button>

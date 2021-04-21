@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import DisplayBookingDetails from './component/DisplayBookingDetails';
-import GetBookingDetails from './component/GetBookingDetails';
-import DisplayBookingList from './component/DisplayBookingList';
-import CreateBooking from './component/CreateBooking';
+import DisplayBookingDetails from './component/Booking/DisplayBookingDetails';
+import GetBookingDetails from './component/Booking/GetBookingDetails';
+import DisplayBookingList from './component/Booking/DisplayBookingList';
+import CreateBooking from './component/Booking/CreateBooking';
 
 function App() {
 
