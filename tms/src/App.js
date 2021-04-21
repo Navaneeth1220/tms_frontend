@@ -1,23 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import AddCustomer from './components/AddCustomer';
+import DisplayCustomerDetails from './components/DisplayCustomerDetails';
+import DisplayCustomerList from './components/DisplayCustomerList';
+import GetCustomerDetails from './components/GetCustomerDetails';
+
 
 function App() {
+  const customer2 = {
+    customerId: 2,
+    customerName: "shivu",
+    customerPassword: "SFDmopd",
+    customerAddress: "Bangalore",
+    customerPhonenumber: "5466",
+    customerEmail: "shivu@gmail.com"
+}
+const customer3 = {
+  customerId: 3,
+  customerName: "ajay",
+  customerPassword: "Medda",
+  customerAddress: "trichy",
+  customerPhonenumber: "875444",
+  customerEmail: "ajy@gmail.com"
+}
+const customers=[customer2,customer3];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      
+      {<AddCustomer />}
+
+      {/*<DisplayCustomerDetails customer ={customer2} />*/}
+      
+      {/*<DisplayCustomerList  customers={customers}/>*/}
+      
+      {/*<GetCustomerDetails />*/}
     </div>
   );
 }
