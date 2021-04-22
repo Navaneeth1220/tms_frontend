@@ -1,3 +1,4 @@
+
 import logo from './logo.svg';
 import './App.css';
 import DisplayHotelDetails from './component/Hotel/DisplayHotelDetails';
@@ -91,7 +92,7 @@ function App() {
   
     const packs = [pack1, pack2, pack3];*/
 
-  /* const data1 = {
+  /*const data1 = {
  
      hotelName: "A2B11",
      hotelType: "Super11",
@@ -108,7 +109,7 @@ function App() {
   const data2 = {
 
     packageName: "National",
-    packageDescription: "Super",
+    packageDescription: "Super_Awesome",
     packageType: "Four_Star",
     packageCost: 8500.0,
     hotelId: 3
@@ -138,7 +139,6 @@ function App() {
       {/*<DisplayPackageList packs = {packs} />*/}
 
       {/*<AddPackage />*/}
-
 
 
     </div>
