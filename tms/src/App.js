@@ -106,7 +106,7 @@ function App() {
    promise.then(response => console.log("add hotel request response", response.data))
      .catch(error => console.log("hotel error response fetched", error.message));*/
 
-  const data2 = {
+  /*const data2 = {
 
     packageName: "National",
     packageDescription: "Super_Awesome",
@@ -118,7 +118,7 @@ function App() {
 
   const promise = addPackage(data2);
   promise.then(response => console.log("add package request response", response.data))
-    .catch(error => console.log("package error response fetched", error.message));
+    .catch(error => console.log("package error response fetched", error.message));*/
 
   return (
 

@@ -64,28 +64,22 @@ export default function AddPackage() {
             <form onSubmit={(event) => submitHandler(event)}>
                 <div>
                     <label>Enter Package Name</label>
-                    <select
+                    <input
                         name="packageName"
                         type="text"
                         ref={packageNameRef}
-                        onChange={() => setFieldState(packageNameRef)}>
-                        <option disabled selected>Select Package Name</option>
-                        <option value="local">Local</option>
-                        <option value="national">National</option>
-                    </select>
+                        onChange={() => setFieldState(packageNameRef)} />
+
                 </div>
 
                 <div>
                     <label>Enter Package Description </label>
-                    <select
+                    <textarea id="packageDescription" rows="4" cols="50"
                         name="packageDescription"
                         type="text"
                         ref={packageDescriptionRef}
-                        onChange={() => setFieldState(packageDescriptionRef)}>
-                        <option disabled selected>Select Package Description</option>
-                        <option value="diverse_cultural">Diverse_Cultural</option>
-                        <option value="challenging_adventure">Challenging_Adventure</option>
-                    </select>
+                        onChange={() => setFieldState(packageDescriptionRef)} />
+
                 </div>
 
                 <div>
@@ -103,28 +97,22 @@ export default function AddPackage() {
 
                 <div>
                     <label>Enter Package Cost</label>
-                    <select
+                    <input
                         name="packageCost"
                         type="number"
                         ref={packageCostRef}
-                        onChange={() => setFieldState(packageCostRef)}>
-                        <option disabled selected>Select Package Cost</option>
-                        <option value="8500.0">8500.0</option>
-                        <option value="10500.0">10500.0</option>
-                    </select>
+                        onChange={() => setFieldState(packageCostRef)} />
+
                 </div>
 
                 <div>
                     <label>Enter Hotel Id</label>
-                    <select
+                    <input
                         name="hotelId"
                         type="number"
                         ref={hotelIdRef}
-                        onChange={() => setFieldState(hotelIdRef)}>
-                        <option disabled selected>Select Hotel Id</option>
-                        <option value="1">1</option>
-                        <option value="3">3</option>
-                    </select>
+                        onChange={() => setFieldState(hotelIdRef)} />
+
                     <br />
 
                     <button type="submit">Add Package</button>

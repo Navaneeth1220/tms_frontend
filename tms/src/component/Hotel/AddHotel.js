@@ -64,16 +64,13 @@ export default function AddHotel() {
         <div>
             <form onSubmit={(event) => submitHandler(event)}>
                 <div>
-                    <label>Enter Hotel Name</label>
-                    <select
+                    <label>Enter Hotel Name </label>
+                    <input
                         name="hotelName"
                         type="text"
                         ref={hotelNameRef}
-                        onChange={() => setFieldState(hotelNameRef)}>
-                        <option disabled selected>Select Hotel Name</option>
-                        <option value="guhantara">Guhantara</option>
-                        <option value="leela_palace">Leela_Palace</option>
-                    </select>
+                        onChange={() => setFieldState(hotelNameRef)} />
+
                 </div>
 
                 <div>
@@ -91,41 +88,32 @@ export default function AddHotel() {
 
                 <div>
                     <label>Enter HotelDescription</label>
-                    <select
+                    <textarea id="hotelDescription" rows="4" cols="50"
                         name="hotelDescription"
                         type="text"
                         ref={hotelDescriptionRef}
-                        onChange={() => setFieldState(hotelDescriptionRef)}>
-                        <option disabled selected>Select Hotel Description</option>
-                        <option value="authentic_relaxing">Authentic_Relaxing</option>
-                        <option value="luxurious_sparkling">Luxurious_Sparkling</option>
-                    </select>
+                        onChange={() => setFieldState(hotelDescriptionRef)} />
+
                 </div>
 
                 <div>
                     <label>Enter Hotel Address</label>
-                    <select
+                    <textarea id="address" rows="4" cols="50"
                         name="address"
                         type="text"
                         ref={addressRef}
-                        onChange={() => setFieldState(addressRef)}>
-                        <option disabled selected>Select Hotel Address</option>
-                        <option value="kanakapura">Kanakapura</option>
-                        <option value="kodihalli">KodiHalli</option>
-                    </select>
+                        onChange={() => setFieldState(addressRef)} />
+
                 </div>
 
                 <div>
                     <label>Enter Hotel Rent</label>
-                    <select
+                    <input
                         name="rent"
                         type="number"
                         ref={rentRef}
-                        onChange={() => setFieldState(rentRef)}>
-                        <option disabled selected>Select Hotel Rent</option>
-                        <option value="4720.0">4720.0</option>
-                        <option value="5720.0">5720.0</option>
-                    </select>
+                        onChange={() => setFieldState(rentRef)} />
+
                     <br />
                     <button type="submit">Add Hotel</button>
                 </div>
