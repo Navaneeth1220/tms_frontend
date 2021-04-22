@@ -1,18 +1,18 @@
 export default function DisplayBookingDetails({book}){
 
-    let {bookId,type,description,title,userId} = book;
+    let {bookingId,bookingType,description,bookingTitle,userId} = book;
 
     return (
        
        
        <div>
-            Booking id is {bookId}
+            Booking id is {bookingId}
             <br/>
-            Booking type is {type}
+            Booking type is {bookingType}
             <br/>
             Booking description is {description}
             <br/>
-            Booking title is {title}
+            Booking title is {bookingTitle}
             <br/>
             Booking user Id is {userId}
             <br/>

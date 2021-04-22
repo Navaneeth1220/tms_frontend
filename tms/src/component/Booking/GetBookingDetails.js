@@ -6,16 +6,16 @@ export default function GetBookingDetails(){
 
 
     let mockBooking = {
-        bookId : 1,
-        type : "Trip",
+        bookingId : 1,
+        bookingType : "Trip",
         description : "family trip",
-        title : "Vacation",
+        bookingTitle : "Vacation",
         userId : 2
       };
 
       const bookingIdRef = React.createRef();
 
-      const initialState = {bookId : undefined, booking : mockBooking , errorMsg:undefined};
+      const initialState = {bookingId : undefined, booking : mockBooking , errorMsg:undefined};
 
       const [currentState , setNewState] = useState(initialState);
 

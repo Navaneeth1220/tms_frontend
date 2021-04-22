@@ -7,33 +7,33 @@ import CreateBooking from './component/Booking/CreateBooking';
 import { addBooking } from './service/Booking/BookingService'
 
 function App() {
-/*
+
 let mockBooking = {
-  bookId : 1,
-  type : "Economy",
+  bookingId : 1,
+  bookingType : "Economy",
   description : "family trip",
-  title : "Weekend",
+  bookingTitle : "Weekend",
   userId : 2
 }
 
 const book1= {
-  bookId : 1,
-  type : "Economy",
+  bookingId : 1,
+  bookingType : "Economy",
   description : "family trip",
-  title : "Weekend",
+  bookingTitle : "Weekend",
   userId : 2
 }
 
 const book2= {
-  bookId : 2,
-  type : "Eecutive",
+  bookingId : 2,
+  bookingType : "Eecutive",
   description : "family trip",
-  title : "Weekend",
+  bookingTitle : "Weekend",
   userId : 2
 }
 
 const bookings = [book1,book2];
-*/
+
 
 
 const data = {
@@ -61,10 +61,10 @@ const promise = addBooking(data);
 
   return (
     <div>
-      {/*<DisplayBookingDetails book={mockBooking}/>*/}
-      {/*<GetBookingDetails/>*/}
-      {/*<DisplayBookingList bookings={bookings}/>*/}
-      {/*<CreateBooking/>*/}
+      {<DisplayBookingDetails book={mockBooking}/>}
+      {<GetBookingDetails/>}
+      {<DisplayBookingList bookings={bookings}/>}
+      {<CreateBooking/>}
 
 
     </div>

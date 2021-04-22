@@ -7,10 +7,10 @@ import errorStyle from "./errorStyle.module.css"
 export default function CreateBooking(){
 
     const booking = {
-        title : "weekend",
-        type : "Executive",
+        bookingTitle : "weekend",
+        bookingType : "Executive",
         description :"Expensive",
-        bookId:545,
+        bookingId:545,
         userId : 1
     };
 
@@ -24,7 +24,7 @@ export default function CreateBooking(){
     const initialState = {
         bookingType : undefined,
         bookingTitle : undefined,
-        bookingDescription : undefined,
+        description : undefined,
         userId : undefined,
         formStatus : "",
     };
