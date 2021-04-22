@@ -1,14 +1,14 @@
 
 import logo from './logo.svg';
 import './App.css';
-import DisplayHotelDetails from './component/Hotel/DisplayHotelDetails';
-import GetHotelDetails from './component/Hotel/GetHotelDetails';
-import DisplayHotelList from './component/Hotel/DisplayHotelList';
-import AddHotel from './component/Hotel/AddHotel';
-import DisplayPackageDetails from './component/Package/DisplayPackageDetails';
-import GetPackageDetails from './component/Package/GetPackageDetails';
-import DisplayPackageList from './component/Package/DisplayPackageList';
-import AddPackage from './component/Package/AddPackage';
+import DisplayHotelDetails from './component/hotel/DisplayHotelDetails';
+import GetHotelDetails from './component/hotel/GetHotelDetails';
+import DisplayHotelList from './component/hotel/DisplayHotelList';
+import AddHotel from './component/hotel/AddHotel';
+import DisplayPackageDetails from './component/package/DisplayPackageDetails';
+import GetPackageDetails from './component/package/GetPackageDetails';
+import DisplayPackageList from './component/package/DisplayPackageList';
+import AddPackage from './component/package/AddPackage';
 import { addHotel } from './service/HotelService';
 import { addPackage } from './service/PackageService';
 
@@ -119,6 +119,8 @@ function App() {
   const promise = addPackage(data2);
   promise.then(response => console.log("add package request response", response.data))
     .catch(error => console.log("package error response fetched", error.message));*/
+
+
 
   return (
 
