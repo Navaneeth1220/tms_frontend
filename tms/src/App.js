@@ -1,16 +1,18 @@
 
 import logo from './logo.svg';
 import './App.css';
-import DisplayHotelDetails from './component/hotel/DisplayHotelDetails';
-import GetHotelDetails from './component/hotel/GetHotelDetails';
-import DisplayHotelList from './component/hotel/DisplayHotelList';
-import AddHotel from './component/hotel/AddHotel';
-import DisplayPackageDetails from './component/package/DisplayPackageDetails';
-import GetPackageDetails from './component/package/GetPackageDetails';
-import DisplayPackageList from './component/package/DisplayPackageList';
-import AddPackage from './component/package/AddPackage';
+import DisplayHotelDetails from './component/hotelcomponent/DisplayHotelDetails';
+import AddHotel from './component/hotelcomponent/AddHotel';
+import DisplayHotelList from './component/hotelcomponent/DisplayHotelList';
+//import GetAllHotels from './component/hotelcomponent/GetAllHotels';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import HotelNavbar from './component/hotelcomponent/HotelNavbar';
+import HotelHome from './component/hotelcomponent/HotelHome';
+import GetHotelDetailsOnRequest from './component/hotelcomponent/GetHotelDetailsOnRequest';
+import { Provider } from 'react-redux';
+import store from './redux/hotelredux/store';
 import { addHotel } from './service/HotelService';
-import { addPackage } from './service/PackageService';
+import GetHotelDetailsByParameter from './component/hotelcomponent/GetHotelDetailsByParameter';
 
 function App() {
 
@@ -125,23 +127,31 @@ function App() {
   return (
 
     <div>
+      <Provider store={store} >
 
-      {/* <DisplayHotelDetails hotel={hotel1} />*/}
+        <Router>
+          <HotelNavbar />
+          <div className="container" style={{ marginTop: '50px' }}>
 
-      {/*<GetHotelDetails />*/}
+            <div className="row">
 
-      {/*<DisplayHotelList hotels={hotels} />*/}
+              <div className="col-md-9">
 
-      {/*<AddHotel />*/}
+                <Switch>
+                  <Route exact path="/" component={HotelHome} />
+                  {/*<Route exact path="/all" component={GetAllHotels} />*/}
+                  <Route exact path="/addhotel" component={AddHotel} />
+                  <Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter} />
+                  <Route exact path="/hoteldetailsonrequest" component={GetHotelDetailsOnRequest} />
 
-      {/*<DisplayPackageDetails pack={pack1} />*/}
+                </Switch>
 
-      {/*<GetPackageDetails />*/}
+              </div>
+            </div>
+          </div>
 
-      {/*<DisplayPackageList packs = {packs} />*/}
-
-      {/*<AddPackage />*/}
-
+        </Router>
+      </Provider>
 
     </div>
 
