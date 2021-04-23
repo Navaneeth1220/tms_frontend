@@ -40,12 +40,12 @@ export default function HotelNavbar() {
 
 
 
-                        {/*<li className="nav-item">
+                        <li className="nav-item">
 
                             <Link to="/all" className="nav-link" >
                                 <span>Get All Hotels</span>
                             </Link>
-                        </li>*/}
+                        </li>*
 
                         <li className="nav-item">
 

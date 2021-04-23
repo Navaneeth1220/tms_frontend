@@ -4,7 +4,7 @@ import './App.css';
 import DisplayHotelDetails from './component/hotelcomponent/DisplayHotelDetails';
 import AddHotel from './component/hotelcomponent/AddHotel';
 import DisplayHotelList from './component/hotelcomponent/DisplayHotelList';
-//import GetAllHotels from './component/hotelcomponent/GetAllHotels';
+import GetAllHotels from './component/hotelcomponent/GetAllHotels';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import HotelNavbar from './component/hotelcomponent/HotelNavbar';
 import HotelHome from './component/hotelcomponent/HotelHome';
@@ -139,7 +139,7 @@ function App() {
 
                 <Switch>
                   <Route exact path="/" component={HotelHome} />
-                  {/*<Route exact path="/all" component={GetAllHotels} />*/}
+                  <Route exact path="/all" component={GetAllHotels} />
                   <Route exact path="/addhotel" component={AddHotel} />
                   <Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter} />
                   <Route exact path="/hoteldetailsonrequest" component={GetHotelDetailsOnRequest} />
