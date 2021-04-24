@@ -13,7 +13,11 @@ export default function PackageNavbar() {
                     Package Module
                 </Link>
 
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
@@ -42,7 +46,7 @@ export default function PackageNavbar() {
 
                         <li className="nav-item">
 
-                            <Link to="/all" className="nav-link" >
+                            <Link to="/allpackages" className="nav-link" >
                                 <span>Get All Packages</span>
                             </Link>
                         </li>*

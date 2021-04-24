@@ -10,10 +10,8 @@ import HotelNavbar from './component/hotelcomponent/HotelNavbar';
 import HotelHome from './component/hotelcomponent/HotelHome';
 import GetHotelDetailsOnRequest from './component/hotelcomponent/GetHotelDetailsOnRequest';
 import { Provider } from 'react-redux';
-//import store from './redux/hotelredux/store';
 import { addHotel } from './service/HotelService';
 import GetHotelDetailsByParameter from './component/hotelcomponent/GetHotelDetailsByParameter';
-
 import DisplayPackageDetails from './component/packagecomponent/DisplayPackageDetails';
 import AddPackage from './component/packagecomponent/AddPackage';
 import DisplayPackageList from './component/packagecomponent/DisplayPackageList';
@@ -21,10 +19,9 @@ import GetAllPackages from './component/packagecomponent/GetAllPackages';
 import PackageNavbar from './component/packagecomponent/PackageNavbar';
 import PackageHome from './component/packagecomponent/PackageHome';
 import GetPackageDetailsOnRequest from './component/packagecomponent/GetPackageDetailsOnRequest';
-import store from './redux/packageredux/store';
+import store from './redux/store';
 import { addPackage } from './service/PackageService';
 import GetPackageDetailsByParameter from './component/packagecomponent/GetPackageDetailsByParameter';
-
 
 
 function App() {
@@ -143,6 +140,7 @@ function App() {
       <Provider store={store} >
 
         <Router>
+          <HotelNavbar />
           <PackageNavbar />
           <div className="container" style={{ marginTop: '50px' }}>
 
@@ -151,8 +149,14 @@ function App() {
               <div className="col-md-9">
 
                 <Switch>
+
+                  <Route exact path="/" component={HotelHome} />
+                  <Route exact path="/allhotels" component={GetAllHotels} />
+                  <Route exact path="/addhotel" component={AddHotel} />
+                  <Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter} />
+                  <Route exact path="/hoteldetailsonrequest" component={GetHotelDetailsOnRequest} />
                   <Route exact path="/" component={PackageHome} />
-                  <Route exact path="/all" component={GetAllPackages} />
+                  <Route exact path="/allpackages" component={GetAllPackages} />
                   <Route exact path="/addpackage" component={AddPackage} />
                   <Route exact path="/packagedetails/:packageId" component={GetPackageDetailsByParameter} />
                   <Route exact path="/packagedetailsonrequest" component={GetPackageDetailsOnRequest} />
@@ -167,36 +171,6 @@ function App() {
       </Provider>
 
     </div>
-
-    /*<div>
-      <Provider store={store} >
-
-        <Router>
-          <HotelNavbar />
-          <div className="container" style={{ marginTop: '50px' }}>
-
-            <div className="row">
-
-              <div className="col-md-9">
-
-                <Switch>
-                  <Route exact path="/" component={HotelHome} />
-                  <Route exact path="/all" component={GetAllHotels} />
-                  <Route exact path="/addhotel" component={AddHotel} />
-                  <Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter} />
-                  <Route exact path="/hoteldetailsonrequest" component={GetHotelDetailsOnRequest} />
-
-                </Switch>
-
-              </div>
-            </div>
-          </div>
-
-        </Router>
-      </Provider>
-
-    </div>*/
-
   );
 }
 

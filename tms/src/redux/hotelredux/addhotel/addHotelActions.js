@@ -1,6 +1,6 @@
 
 import { addHotel } from "../../../service/HotelService";
-import store from "../store";
+import store from "../../store";
 import addHotelConstants from "./addHotelConstants";
 
 function addHotelSuccess(hotel) {

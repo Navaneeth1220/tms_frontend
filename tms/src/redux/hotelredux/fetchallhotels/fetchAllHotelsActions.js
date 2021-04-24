@@ -1,6 +1,6 @@
 
 import { fetchAllHotels } from "../../../service/HotelService";
-import store from "../store";
+import store from "../../store";
 import fetchAllHotelsConstants from "./fetchAllHotelsConstants";
 
 
