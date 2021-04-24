@@ -24,7 +24,7 @@ export default function HotelNavbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <Link to="/" className="nav-link" >
+                            <Link to="/hotelhome" className="nav-link" >
                                 <span>HotelHome </span>
                                 <span className="sr-only">(current)</span>
 
@@ -54,7 +54,7 @@ export default function HotelNavbar() {
                         <li className="nav-item">
 
                             <Link to="/hoteldetailsonrequest" className="nav-link" >
-                                <span>Get Hotel Details</span>
+                                <span>Get Hotel Details </span>
                             </Link>
                         </li>
 

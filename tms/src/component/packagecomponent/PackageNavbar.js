@@ -24,7 +24,7 @@ export default function PackageNavbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <Link to="/" className="nav-link" >
+                            <Link to="/packagehome" className="nav-link" >
                                 <span>PackageHome </span>
                                 <span className="sr-only">(current)</span>
 

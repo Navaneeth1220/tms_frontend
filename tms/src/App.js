@@ -150,12 +150,12 @@ function App() {
 
                 <Switch>
 
-                  <Route exact path="/" component={HotelHome} />
+                  <Route exact path="/hotelhome" component={HotelHome} />
                   <Route exact path="/allhotels" component={GetAllHotels} />
                   <Route exact path="/addhotel" component={AddHotel} />
                   <Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter} />
                   <Route exact path="/hoteldetailsonrequest" component={GetHotelDetailsOnRequest} />
-                  <Route exact path="/" component={PackageHome} />
+                  <Route exact path="/packagehome" component={PackageHome} />
                   <Route exact path="/allpackages" component={GetAllPackages} />
                   <Route exact path="/addpackage" component={AddPackage} />
                   <Route exact path="/packagedetails/:packageId" component={GetPackageDetailsByParameter} />
