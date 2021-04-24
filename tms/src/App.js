@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import DisplayFeedbackDetails from './component/Feedback/DisplayFeedbackDetails';
-import DisplayFeedbackList from './component/Feedback/DisplayFeedbackList';
-import AddFeedback from './component/Feedback/AddFeedback';
+import DisplayFeedbackDetails from './component/feedback/DisplayFeedbackDetails';
+import DisplayFeedbackList from './component/feedback/DisplayFeedbackList';
+import AddFeedback from './component/feedback/AddFeedback';
 
 function App() {
     const feed1 = {
