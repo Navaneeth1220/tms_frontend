@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import DisplayFeedbackDetails from "./DisplayFeedbackDetails";
 import commonStyle from "./commonStyle.module.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export default function AddFeedback() {
 
 
     const feedbackRef = React.createRef();
     const ratingRef = React.createRef();
-    const customerIdRef=React.createRef();
-   
-    const response={   feed:undefined,errMsg: undefined};
+    const customerIdRef = React.createRef();
+    
+      const response={   feed:undefined,errMsg: undefined};
     const initialState = {
         feedback: undefined,
         rating: undefined,
@@ -17,18 +18,20 @@ export default function AddFeedback() {
         formStatus: "",
     };
 
-    const [currentState, setNewState] = useState(initialState);
+     const [currentState, setNewState] = useState(initialState);
 
     const submitHandler = (event) => {
 
         event.preventDefault();
-       // setNewState({ ...currentState, formStatus: "form submitted successfully" });
+        //setNewState({ ...currentState, formStatus: "form submitted successfully" });
+
         let formData = { ...currentState };
-        console.log("form data that has to be sent to service", formData);
+        console.log("form data that has to be sent to service", formData)
+    
+    
+      };  
 
-    };
-
-    const setFieldState = (ref) => {
+      const setFieldState = (ref) => {
 
         const fieldName = ref.current.name;
         const fieldValue = ref.current.value;
@@ -46,76 +49,66 @@ export default function AddFeedback() {
 
     return (
 
-        <div>
-            <form onSubmit={(event) => submitHandler(event)}>
-                <div>
-                    <label>Enter Feedback</label>
-                    <select
-                        name="feedback"
-                        type="text"
-                        ref={feedbackRef}
-                        onChange={() => setFieldState(feedbackRef)}>
-                        <option disabled selected>Select Feedback</option>
-                        <option value="Good">Good</option>
-                        <option value="Average">Average</option>
-                        <option value="Bad">Bad</option>
-                        </select>
-                    
-                </div>
-                <div>
-                    <label>Enter Customer Id</label>
-                    <select
-                        name="customerId"
-                        type="number"
-                        ref={customerIdRef}
-                        onChange={() => setFieldState(customerIdRef)}>
-                        <option disabled selected>Select customerId</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        </select>
-                    
-                </div>
-                <div>
-                    <label>Enter Rating</label>
-                    <select
-                        name="rating"
-                        type="number"
-                        ref={ratingRef}
-                        onChange={() => setFieldState(ratingRef)}>
-                        <option disabled selected>Select Rating</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select>
-                    <br />
-                    <button type="submit">Add Feedback</button>
-                </div>
-            </form>
-            <h2>{currentState.formStatus}</h2>
+      <div className="container">
+          <form onSubmit={(event) => submitHandler(event)}>
+              <div className="form-group">
+                  <label>Enter Feedback</label>
+                  <select
+                  className="form-control"
+                      name="feedback"
+                      type="text"
+                      ref={feedbackRef}
+                      onChange={() => setFieldState(feedbackRef)}>
+                      <option value="Good">Good</option>
+                      <option value="Average">Average</option>
+                      <option value="Bad">Bad</option>
+                      </select>
+                  
+              </div>
+        
+              <div className="form-group"> 
+                  <label>Enter Rating</label>
+                  <select
+                  className="form-control"
+                      name="rating"
+                      type="number"
+                      ref={ratingRef}
+                      onChange={() => setFieldState(ratingRef)}>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      </select>
+                  <br /> 
+              </div>
+              <div className="form-group">
+                <input type="text" placeholder="add comments" name="Comments"> 
+                </input>
+              </div>
+              <button type="submit" className="btn btn-primary">Add Feedback</button>
+          </form>
+          <h2>{currentState.formStatus}</h2>
 
-            {
-                response.feed ? (
+          {
+              currentState.feed ? (
 
-                    <div>
-                        <h2>Feedback Added Successfully</h2>
-                        <DisplayFeedbackDetails feed={response.feed} />
-                    </div>
+                  <div>
+                      <h2>Feedback Added Successfully</h2>
+                      <DisplayFeedbackDetails feed={currentState.feed} />
+                  </div>
 
-                ) : ""}
+              ) : ""}
 
-            {
-                response.errMsg ? (
+          {
+              currentState.errMsg ? (
 
-                    <div className={commonStyle.error}>
-                        Feedback Request Was Not Successful <br />
-                        {response.errMsg}
-                    </div>
+                  <div className={commonStyle.error}>
+                      Feedback Request Was Not Successful <br />
+                      {currentState.errMsg}
+                  </div>
 
-                ) : ""}
-        </div>
-    );
-
-}
+              ) : ""}
+      </div>
+    )
+              }  
