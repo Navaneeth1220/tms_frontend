@@ -4,7 +4,7 @@ import DisplayRouteDetails from "./DisplayRouteDetails";
 import errorStyle from "./errorStyle.module.css"
 
 
-export default function CreateBooking(){
+export default function CreateRoute(){
 
     const route = {
         routeId : "r2",

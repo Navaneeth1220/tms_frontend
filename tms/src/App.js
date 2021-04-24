@@ -13,8 +13,8 @@ function App() {
   return (
     <div>
     
-     {<DisplayRouteDetails route = {mockRoute}/>}
-     {<GetRouteDetails/>}
+     {/*<DisplayRouteDetails route = {mockRoute}/>*}
+     {/*<GetRouteDetails/>*/}
      {<CreateRoute/>}
     </div>
   );
