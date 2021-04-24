@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import DisplayRouteDetails from './components/Route/DisplayRouteDetails';
+import GetRouteDetails from './components/Route/GetRouteDetails';
 
 function App() {
+  let mockRoute={
+    routeId: "r1",
+    routeFrom: "Jaipur",
+    routeTo: "Himachal",
+    pickupPoint: "Bus Stand",
+    fare: 1200
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    
+     {<DisplayRouteDetails route = {mockRoute}/>}
+     {<GetRouteDetails/>}
+     {<CreateRoute/>}
     </div>
   );
 }
