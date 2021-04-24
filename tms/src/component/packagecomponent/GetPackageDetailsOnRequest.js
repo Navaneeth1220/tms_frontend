@@ -89,7 +89,7 @@ export default function GetPackageDetailsOnRequest() {
                     response.pack ? (
                         <div>
                             <DisplayPackageDetails pack={response.pack} />
-74                    </div>
+                        </div>
 
                     ) : ""}
 
