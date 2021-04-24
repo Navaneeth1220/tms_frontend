@@ -1,9 +1,9 @@
 
-import { addPackage } from "../../service/PackageService";
+import { addPackage } from "../../../service/PackageService";
 import store from "../store";
 import addPackageConstants from "./addPackageConstants";
 
-function addPackageSuccess() {
+function addPackageSuccess(pack) {
 
     return ({
 

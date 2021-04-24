@@ -1,5 +1,5 @@
 
-import fetchAllHotelsContants from "./fetchAllHotelsConstants";
+import fetchAllHotelsConstants from "./fetchAllHotelsConstants";
 
 const initialState = {
 
@@ -10,9 +10,9 @@ const initialState = {
 
 export default function fetchAllHotelsReducer(state = initialState, action) {
 
-    if (action.type === fetchAllHotelsContants.fetchAllHotelsFail ||
-        action.type === fetchAllHotelsContants.fetchAllHotelsRequest ||
-        action.type === fetchAllHotelsContants.fetchAllHotelsSuccess
+    if (action.type === fetchAllHotelsConstants.fetchAllHotelsFail ||
+        action.type === fetchAllHotelsConstants.fetchAllHotelsRequest ||
+        action.type === fetchAllHotelsConstants.fetchAllHotelsSuccess
 
     ) {
 

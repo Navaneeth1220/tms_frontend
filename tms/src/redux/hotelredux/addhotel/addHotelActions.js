@@ -1,6 +1,6 @@
 
 import { addHotel } from "../../../service/HotelService";
-import hotelStore from "../store";
+import store from "../store";
 import addHotelConstants from "./addHotelConstants";
 
 function addHotelSuccess(hotel) {
@@ -37,13 +37,13 @@ function addHotelAction(data) {
 
                 const hotel = response.data;
                 let actionObj = addHotelSuccess(hotel);
-                hotelStore.dispatch(actionObj);
+                store.dispatch(actionObj);
             }
 
         ).catch(error => {
 
             let actionObj = addHotelFail(error.message);
-            hotelStore.dispatch(actionObj);
+            store.dispatch(actionObj);
         })
 
     }

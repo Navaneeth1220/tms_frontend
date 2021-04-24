@@ -1,5 +1,5 @@
 
-const fetchAllHotelsContants = {
+const fetchAllHotelsConstants = {
 
     fetchAllHotelsRequest: "fetch_all_hotels_request",
 
@@ -9,4 +9,4 @@ const fetchAllHotelsContants = {
 
 };
 
-export default fetchAllHotelsContants;
+export default fetchAllHotelsConstants;

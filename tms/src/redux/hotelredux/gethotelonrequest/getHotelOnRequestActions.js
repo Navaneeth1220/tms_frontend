@@ -1,6 +1,6 @@
 
 import { fetchHotelById } from "../../../service/HotelService";
-import hotelStore from "../store";
+import store from "../store";
 import getHotelOnRequestConstants from "./getHotelOnRequestConstants";
 
 function getHotelOnRequestSuccess(hotel) {
@@ -35,12 +35,12 @@ function getHotelOnRequestAction(hotelId) {
 
             const hotel = response.data;
             const actionObj = getHotelOnRequestSuccess(hotel);
-            hotelStore.dispatch(actionObj);
+            store.dispatch(actionObj);
 
         }).catch(error => {
 
             const actionObj = getHotelOnRequestFail(error.message);
-            hotelStore.dispatch(actionObj);
+            store.dispatch(actionObj);
         })
     }
 

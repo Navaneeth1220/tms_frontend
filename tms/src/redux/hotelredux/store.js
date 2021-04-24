@@ -7,7 +7,7 @@ import fetchHotelByIdReducer from "./fetchhotelbyid/fetchHotelByIdReducer";
 import fetchAllHotelsReducer from "./fetchallhotels/fetchAllHotelsReducer";
 import getHotelOnRequestReducer from "./gethotelonrequest/getHotelOnRequestReducer";
 
-const hotelStore = createStore(
+const store = createStore(
 
     combineReducers({
 
@@ -21,4 +21,4 @@ const hotelStore = createStore(
     composeWithDevTools(applyMiddleware(thunk))
 );
 
-export default hotelStore;
+export default store;

@@ -7,7 +7,7 @@ const validationMessage = {
     hotelTypeGreaterThanLengthTen: "hotelType can't be greater than 10 letters",
     packageNameSmallThanLengthFour: "packageName can't be smaller than 4 letters",
     packageDescriptionSmallThanLengthTen: "packageDescription can't be smaller than 10 letters",
-    packageTypeGreaterThanLengthSix: "packageType can't be greater than 6 letters",
+    packageTypeGreaterThanLengthTen: "packageType can't be greater than 10 letters",
 
 
 

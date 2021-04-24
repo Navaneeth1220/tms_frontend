@@ -1,6 +1,6 @@
 
 import { fetchHotelById } from "../../../service/HotelService";
-import hotelStore from "../store";
+import store from "../store";
 import fetchHotelByIdConstants from "./fetchHotelByIdConstants";
 
 function fetchHotelByIdRequest() {
@@ -44,17 +44,17 @@ function fetchHotelByIdAction(hotelId) {
 
     return () => {
 
-        hotelStore.dispatch(fetchHotelByIdRequest());
+        store.dispatch(fetchHotelByIdRequest());
         const promise = fetchHotelById(hotelId);
         
         promise.then(response => {
 
             const hotel = response.data;
-            hotelStore.dispatch(fetchHotelByIdSuccess(hotel));
+            store.dispatch(fetchHotelByIdSuccess(hotel));
         })
             .catch(error => {
 
-                hotelStore.dispatch(fetchHotelByIdFail(error.message));
+                store.dispatch(fetchHotelByIdFail(error.message));
             })
 
     }

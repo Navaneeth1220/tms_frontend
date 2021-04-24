@@ -14,7 +14,7 @@ export default function DisplayHotelList({ hotels }) {
                 {
                     hotels.map((hotel) => <li key={hotel.hotelId}>
 
-                        <Link to={`/hoteldetails/${hotel.hoteld}`} >
+                        <Link to={`/hoteldetails/${hotel.hotelId}`} >
                             <span>{hotel.hotelId} {hotel.hotelName} </span>
 
                         </Link>

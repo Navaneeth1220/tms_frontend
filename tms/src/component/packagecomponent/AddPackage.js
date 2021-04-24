@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import DisplayPackageDetails from "./DisplayPackageDetails";
 import commonStyle from "./commonStyle.module.css";
-import validationMessage from './validationMessage';
+import validationMessage from '../../validationMessage';
 import { useDispatch, useSelector } from "react-redux";
-import { addPackageAction } from ".../redux/packageredux/addpackage/addPackageActions";
+import { addPackageAction } from "../../redux/packageredux/addpackage/addPackageActions";
 
 export default function AddPackage() {
 
@@ -112,9 +112,9 @@ export default function AddPackage() {
 
     const validatePackageType = (packageType) => {
 
-        if (packageType.length > 6) {
+        if (packageType.length > 10) {
 
-            return validationMessage.packageTypeGreaterThanLengthSix;
+            return validationMessage.packageTypeGreaterThanLengthTen;
         }
 
         return undefined;
@@ -220,7 +220,7 @@ export default function AddPackage() {
 
                     <br />
 
-                    <button type="submit">Add Package</button>
+                    <button className="btn-btn-primary">Add Package</button>
                 </div>
             </form>
 
@@ -240,7 +240,7 @@ export default function AddPackage() {
 
                     <div className={commonStyle.error}>
                         Package Request Was Not Successful <br />
-                        {response.errMsg}
+                        {response.error}
                     </div>
 
                 ) : ""}

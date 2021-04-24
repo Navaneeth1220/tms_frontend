@@ -1,7 +1,7 @@
 
 import { fetchAllHotels } from "../../../service/HotelService";
-import hotelStore from "../store";
-import fetchAllHotelsContants from "./fetchAllHotelsConstants";
+import store from "../store";
+import fetchAllHotelsConstants from "./fetchAllHotelsConstants";
 
 
 function fetchAllHotelsRequest() {
@@ -10,7 +10,7 @@ function fetchAllHotelsRequest() {
             progress: true,
             hotels: [],
             error: '',
-            type: fetchAllHotelsContants.fetchAllHotelsRequest
+            type: fetchAllHotelsConstants.fetchAllHotelsRequest
         }
     );
 
@@ -23,7 +23,7 @@ function fetchAllHotelsSuccess(hotels) {
             progress: false,
             hotels: hotels,
             error: '',
-            type: fetchAllHotelsContants.fetchAllHotelsSuccess
+            type: fetchAllHotelsConstants.fetchAllHotelsSuccess
         });
 }
 
@@ -35,7 +35,7 @@ function fetchAllHotelsFail(error) {
             progress: false,
             hotels: [],
             error: error,
-            type: fetchAllHotelsContants.fetchAllHotelsFail
+            type: fetchAllHotelsConstants.fetchAllHotelsFail
         });
 
 
@@ -45,17 +45,17 @@ function fetchAllHotelsAction() {
 
     return () => {
 
-        hotelStore.dispatch(fetchAllHotelsRequest());
+        store.dispatch(fetchAllHotelsRequest());
         const promise = fetchAllHotels();
         
         promise.then((response) => {
 
             const hotels = response.data;
-            hotelStore.dispatch(fetchAllHotelsSuccess(hotels));
+            store.dispatch(fetchAllHotelsSuccess(hotels));
 
         }).catch(error => {
 
-            hotelStore.dispatch(fetchAllHotelsFail(error.message));
+            store.dispatch(fetchAllHotelsFail(error.message));
         })
 
     }
