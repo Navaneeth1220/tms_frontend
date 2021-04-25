@@ -8,7 +8,7 @@ import DisplayCustomerDetails from "./DisplayCustomerDetails"
 
 
 
-export default function GetCustomerDetailsByPacakgeId() {
+export default function GetCustomerDetailsPackageId() {
     
 
     const packageIdRef = React.createRef();
@@ -85,3 +85,4 @@ export default function GetCustomerDetailsByPacakgeId() {
     );
 
 }
+

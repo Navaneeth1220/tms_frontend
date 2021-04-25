@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DisplayCustomerDetails from "./DisplayCustomerDetails";
 import commonStyle from "./commonStyle.module.css"
-import validationMessage from '../../validationMessage';
+import validationMessage from "../../validationMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { addCustomerAction } from "../../redux/customer/addCustomer/addCustomerActions";
 
@@ -103,7 +103,7 @@ export default function AddCustomer() {
 
     const validateCustomerPassword = (customerPassword) => {
 
-        if (customerPassword.length > 8) {
+        if (customerPassword.length < 8) {
 
             return validationMessage.customerPasswordSmallthanLenghtEight;
         }
@@ -151,7 +151,7 @@ export default function AddCustomer() {
                     <label>Enter Customer Password </label>
                     <input
                         name="customerPassword"
-                        type="text"
+                        type="password"
                         ref={customerPasswordRef}
                         onChange={() => setFieldState(customerPasswordRef)}
                         className="form-control"

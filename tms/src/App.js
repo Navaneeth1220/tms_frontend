@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import GetCustomerDetailsById from "./components/customer/GetCustomerDetailsById";
 import GetCustomerDetailsByRouteId from"./components/customer/GetCustomerDetailsRouteId";
-import GetCustomerDetailsByPackageId from"./components/customer/GetCustomerDetailsPackageId";
+import GetCustomerDetailsPackageId from"./components/customer/GetCustomerDetailsPackageId";
 //import DisplayCustomerDetails from './components/DisplayCustomerDetails';
 //import DisplayCustomerList from './components/DisplayCustomerList';
 //import GetCustomerDetails from './components/GetCustomerDetails';
@@ -34,9 +34,9 @@ function App() {
               <Route exact path="/" component={Home} />
 
               <Route exact path="/addcustomer" component={AddCustomer} />
-              <Route exact Path="/customerdetailsById" component={GetCustomerDetailsById}/>
+              {/*<Route exact Path="/customerdetailsById" component={GetCustomerDetailsById}/>*/}
               {/*<Route exact Path="/customerdetailsByRouteId" component={GetCustomerDetailsByRouteId}/>*/}
-              <Route exact Path="/customerdetailsByPackgeId" component={GetCustomerDetailsByPackageId}/>
+              <Route exact Path="/customerdetailsByPackageId" component={GetCustomerDetailsPackageId}/>
             </Switch>
 
           </div>
