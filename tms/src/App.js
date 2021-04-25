@@ -1,40 +1,83 @@
 import logo from './logo.svg';
 import './App.css';
-import AddCustomer from './components/AddCustomer';
-import DisplayCustomerDetails from './components/DisplayCustomerDetails';
-import DisplayCustomerList from './components/DisplayCustomerList';
-import GetCustomerDetails from './components/GetCustomerDetails';
+import AddCustomer from './components/customer/AddCustomer';
+import Home from "./components/customer/Home";
+import Navbar from "./components/customer/NavBar";
+import store from "./redux/store";
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import GetCustomerDetailsById from "./components/customer/GetCustomerDetailsById";
+import GetCustomerDetailsByRouteId from"./components/customer/GetCustomerDetailsRouteId";
+import GetCustomerDetailsByPackageId from"./components/customer/GetCustomerDetailsPackageId";
+//import DisplayCustomerDetails from './components/DisplayCustomerDetails';
+//import DisplayCustomerList from './components/DisplayCustomerList';
+//import GetCustomerDetails from './components/GetCustomerDetails';
 
 
 function App() {
-  const customer2 = {
-    customerId: 2,
-    customerName: "shivu",
-    customerPassword: "SFDmopd",
-    customerAddress: "Bangalore",
-    customerPhonenumber: "5466",
-    customerEmail: "shivu@gmail.com"
-  }
-  const customer3 = {
-    customerId: 3,
-    customerName: "ajay",
-    customerPassword: "Medda",
-    customerAddress: "trichy",
-    customerPhonenumber: "875444",
-    customerEmail: "ajy@gmail.com"
-  }
-  const customers = [customer2, customer3];
+
+  
   return (
-    <div >
 
-      {<AddCustomer />}
+    <Provider store={store} >
 
-      {/*<DisplayCustomerDetails customer ={customer2} />*/}
+    <Router>
+      <Navbar />
+      <div className="container" style={{ marginTop: '50px' }}>
 
-      {/*<DisplayCustomerList  customers={customers}/>*/}
+        <div className="row">
 
-      {/*<GetCustomerDetails />*/}
-    </div>
+          <div className="col-md-9">
+
+            <Switch>
+
+              <Route exact path="/" component={Home} />
+
+              <Route exact path="/addcustomer" component={AddCustomer} />
+              <Route exact Path="/customerdetailsById" component={GetCustomerDetailsById}/>
+              {/*<Route exact Path="/customerdetailsByRouteId" component={GetCustomerDetailsByRouteId}/>*/}
+              <Route exact Path="/customerdetailsByPackgeId" component={GetCustomerDetailsByPackageId}/>
+            </Switch>
+
+          </div>
+        </div>
+      </div>
+
+    </Router>
+  </Provider>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
   );
 }
 

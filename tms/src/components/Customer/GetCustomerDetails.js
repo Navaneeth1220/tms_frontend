@@ -11,9 +11,9 @@ export default function GetCustomerDetails() {
         customerId: 5,
         customerName: "nava",
         customerPassword: "navaa",
-        customerAddress: "kanyakumari",
-        customerPhonenumber: "445188",
-        customerEmail: "nava@gmail.com"
+        address: "kanyakumari",
+        mobilenumber: "445188",
+        email: "nava@gmail.com"
     }
 
     const customerIdRef = React.createRef();

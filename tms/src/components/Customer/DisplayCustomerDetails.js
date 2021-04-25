@@ -1,7 +1,7 @@
 
 export default function DisplayCustomerDetails({ customer }) {
 
-    let { customerId, customerName, customerPassword, customerAddress, customerPhonenumber, customerEmail } = customer;
+    let { customerId, customerName, customerPassword, address, mobileNo, email } = customer;
 
     return (
 
@@ -12,11 +12,11 @@ export default function DisplayCustomerDetails({ customer }) {
             <br />
             Customer Password is {customerPassword}
             <br />
-            Customer Address is {customerAddress}
+            Customer Address is {address}
             <br />
-            Customer Phonenumber is {customerPhonenumber}
+            Customer Mobilenumber is {mobileNo}
             <br />
-            Customer Email is {customerEmail}
+            Customer Email is {email}
             <br />
         </div>
     );
