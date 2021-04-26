@@ -12,6 +12,7 @@ import GetBookingOnRequest from './component/Booking/GetBookingOnRequest';
 import store from './redux/store';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import FindBookingById from './component/Booking/FindBookingById';
+import GetBookingOnUserIdRequest from './component/Booking/GetBookingOnUserIdRequest'
 
 function App() {
 
@@ -90,6 +91,7 @@ const data = {
                     <Route exact path="/" component = {BookingHome} />
                     <Route exact path="/addbooking" component = {AddBooking} />
                     <Route exact path="/bookingdetails" component = {GetBookingOnRequest} />
+                    <Route exact path="/useridbooking" component = {GetBookingOnUserIdRequest}/>
                   </Switch>
 
 

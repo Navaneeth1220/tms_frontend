@@ -73,8 +73,9 @@ export default function AddBooking(){
         if(currentState.validations.cardNo || currentState.validations.bankName){
             return;
         }        
-
-        let data={...currentState};
+        const packageId = parseInt(currentState.packageId);
+        
+        let data={...currentState,packageId:packageId};
         console.log("form data that has to be sent to service",data);
         dispatch(addBookingAction(data));
     };
@@ -86,11 +87,11 @@ export default function AddBooking(){
 
         let validationMsg;
 
-        if (ref=cardNoRef){
+        if (ref===cardNoRef){
             validationMsg= validateCardNo(fieldValue);
         }
 
-        if(ref=bankNameRef){
+        if(ref===bankNameRef){
             validationMsg=validateBankName(fieldValue);
         }
 
@@ -108,7 +109,7 @@ export default function AddBooking(){
     };
 
     const validateCardNo = (cardNo)=>{
-        if(cardNo!==16){
+        if(cardNo.length!==16){
             return validationMessage.cardNoIsInvalid;
         }
         return undefined;
@@ -146,16 +147,16 @@ export default function AddBooking(){
                     <textarea name="description" type="text" ref={bookingDescriptionRef} onChange={()=>setFieldState(bookingDescriptionRef)} className="form-control" required/>
                 </div>
 
-                {/*
+                {
                 <div className="form-group">
                     <label>Package </label>
                     <select name="packageId"  ref={packageIdRef} onChange={()=>setFieldState(packageIdRef)} className="form-control" required>
                         <option value="none" disabled selected hidden>Select package</option>
-                        <option value="1">Goa trip</option>
-                        <option value="2">Andaman Trip</option>
+                        <option value="10">Goa trip</option>
+                        <option value="12">Andaman Trip</option>
                     </select>
                      <br/>
-                </div> */}
+                </div> }
 
                 <div className="form-group">
                     <label>Payment Mode </label>
@@ -182,6 +183,13 @@ export default function AddBooking(){
                 <div className="form-group">
                     <label>Bank name </label>
                     <input name="bankName" ref={bankNameRef} onChange={()=>setFieldState(bankNameRef)} className="form-control" required/>
+                    {currentState.validations.bankName ? (
+                        <div>
+                            {currentState.validations.bankName}
+                        </div>
+                    ) : (
+                        ""
+                    )}
                     <br/>
                     <button className="btn btn-primary" type="submit">Make Booking</button>
                 </div>

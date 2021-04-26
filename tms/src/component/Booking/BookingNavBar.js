@@ -43,6 +43,13 @@ export default function BookingNavBar(){
                         </li>
 
 
+                         <li className="nav-item">
+
+                            <Link to="/useridbooking" className="nav-link">
+                            <span>Booking History</span>
+                            </Link>
+                        </li>
+
                     </ul>
                 
             </div>

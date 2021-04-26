@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import { useDispatch , useSelector} from "react-redux";
 import DisplayBookingDetails from './DisplayBookingDetails';
 import style from './style.css';
-import {getBookingOnRequestAction} from '../../redux/bookingredux/getbookingonrequest/getBookingOnRequestActions'
+import {getBookingOnUserIdRequestAction} from '../../redux/bookingredux/getBookingOnUserIdRequest/getBookingOnUserIdRequestActions'
+import DisplayBookingList from "./DisplayBookingList";
 
 
-export default function GetBookingOnRequest() {
+
+export default function GetBookingOnUserIdRequest() {
     
-    const bookingIdRef = React.createRef();
+    const userIdRef = React.createRef();
 
-    const initialState = {bookingId : undefined};
+    const initialState = {userId : undefined};
 
     const [currentState, setNewState]= useState(initialState);
 
     const response = useSelector(state=>{
         return ({
-            booking : state.getBookingOnRequest.booking,
-            error : state.getBookingOnRequest.error
+            booking : state.getBookingOnUserIdRequest.booking,
+            error : state.getBookingOnUserIdRequest.error
         });
     })
 
@@ -25,32 +27,31 @@ export default function GetBookingOnRequest() {
     const submitHandler = (event) => {
 
         event.preventDefault();
-        
-        const bookingId = bookingIdRef.current.value;
-        dispatch(getBookingOnRequestAction(bookingId));
-        console.log("inside submit handler");
         console.log("current state", currentState);
+        const userId = userIdRef.current.value;
+        dispatch(getBookingOnUserIdRequestAction(userId));
+
     }
 
     const setFieldState = () => {
 
-        const bookingIdValue = bookingIdRef.current.value;
-        const newState = { ...currentState, bookingId: bookingIdValue, booking: undefined, errMsg: undefined };
+        const userIdValue = userIdRef.current.value;
+        const newState = { ...currentState, userId: userIdValue, booking: undefined, errMsg: undefined };
         setNewState(newState);
-        console.log("inside field state");
+        console.log("inside set field state ");
     }
 
     return (
         <div>
-            <h1> Get Booking Details On Request</h1>
+            <h1> Booking History</h1>
 
             <div className={style.content}>
                 <form onSubmit={submitHandler} className={style.content}>
 
                     <div className="form-group">
-                        <label>Enter BookingId</label>
+                        <label>Enter User Id</label>
 
-                        <input name="bookingId" type="number" ref={bookingIdRef} onChange={setFieldState} className="form-control"/>
+                        <input name="userId" type="number" ref={userIdRef} onChange={setFieldState} className="form-control"/>
                     </div>
 
                     <button className="btn btn-primary">Get Booking</button>
@@ -58,7 +59,7 @@ export default function GetBookingOnRequest() {
 
                 {response.booking ? (
                     <div>
-                        <DisplayBookingDetails booking={response.booking} />
+                        <DisplayBookingList bookings={response.booking} />
                     </div>
                 ) : ''}
 
