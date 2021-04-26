@@ -7,11 +7,9 @@ import AddBooking from './component/Booking/AddBooking';
 import BookingHome from './component/Booking/BookingHome';
 import { Provider } from 'react-redux';
 import BookingNavBar from './component/Booking/BookingNavBar';
-import FindBookingByParameter from './component/Booking/FindBookingByParameter';
 import GetBookingOnRequest from './component/Booking/GetBookingOnRequest';
 import store from './redux/store';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import FindBookingById from './component/Booking/FindBookingById';
 import GetBookingOnUserIdRequest from './component/Booking/GetBookingOnUserIdRequest'
 
 function App() {
