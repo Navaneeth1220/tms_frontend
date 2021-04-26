@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+body{
+    background: url(mainbg3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+form{
+
+    font-family: Poppins;
+}
+
+select{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16x;
+}
+
+.content{
+    marigin-top : 50px;
+}
+
+.form-control{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16x;
+}
+
+.error{
+
+    color:red;
+    font-size: 1em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}
+
+.display{
+    color : white;
+    font-family: Poppins;
+}
+

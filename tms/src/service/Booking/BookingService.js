@@ -2,8 +2,8 @@ import axios from "axios"
 
 const baseUrl="http://localhost:8181";
 
-function findById(bookId){
-    const url= baseUrl+ "/bookings/byid/"+bookId;
+function findById(bookingId){
+    const url= baseUrl+ "/bookings/byid/"+bookingId;
     const promise=axios.get(url);
     return promise;
 }
@@ -31,6 +31,17 @@ function addBooking(data){
     const promise = axios.post(url,requestData);
     return promise;
 
+
+
 }
 
-export {findById, addBooking}
+function findByUserId(userId){
+    const url = baseUrl+"/bookings/byuserid/"+userId;
+    const promise = axios.get(url);
+    return promise;
+}
+
+
+
+
+export {findById, addBooking, findByUserId}
