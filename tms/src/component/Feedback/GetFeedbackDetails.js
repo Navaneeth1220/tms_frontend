@@ -2,6 +2,7 @@
 import React, { useState } from "react"
 import DisplayFeedbackDetails from "./DisplayFeedbackDetails"
 import commonStyle from "./commonStyle.module.css"
+import {fetchFeedbackById} from "../../service/FeedbackService";
 
 
 
@@ -18,7 +19,16 @@ export default function GetFeedbackDetails() {
     const submitHandler = (event) => {
 
         event.preventDefault();
-
+        const feedbackId = feedbackIdRef.current.value;
+        const promise = fetchFeedbackById(feedbackId);
+         promise.then(response=>{
+             const newState={...currentState,feedback:response.data};
+             setNewState (newState);
+            }).catch(error=>{
+                const newState={...currentState,errMsg:error.message};
+                setNewState(newState);
+            }
+            )
     }
 
     const setFieldState = () => {
@@ -35,14 +45,14 @@ export default function GetFeedbackDetails() {
 
         <div>
             <form onSubmit={submitHandler}>
-                <div>
+                <div className="form-group">
                     <label>Enter Feedback Id: </label>
                     <input
                         name="feedbackId"
                         type="number"
                         ref={feedbackIdRef}
                         onChange={setFieldState}
-
+                        className="form-control"
                     />
                     <button>Get Feedback</button>
 
@@ -52,7 +62,7 @@ export default function GetFeedbackDetails() {
             {
                 currentState.feedback ? (
                     <div>
-                        <DisplayFeedbackDetails feed={currentState.feed} />
+                        <DisplayFeedbackDetails feed={currentState.feedback} />
                     </div>
 
                 ) : ""}

@@ -2,19 +2,31 @@ import React, { useEffect, useState } from "react"
 import DisplayFeedbackDetails from "./DisplayFeedbackDetails"
 import commonStyle from "./commonStyle.module.css"
 import {fetchByCustomerId} from "../../service/FeedbackService";
-import { addFeedbackAction } from "../../redux/feedbackredux/addfeedback/addFeedbackAction";
+
 
 export default function GetFeedbackDetailsCustomerId() {
- const intialState={feedback:undefined,customerId:undefined,errMsg:undefined};
+ 
+const intialState={feedback:undefined,customerId:undefined,errMsg:undefined};
  const customerIdRef=React.createRef();
  const [currentState,setNewState]=useState(intialState);
  
  const submitHandler = (event) => {
     event.preventDefault();
-         let data = {...currentState};
-         console.log("data sent to service", data);
-         dispatch(addFeedbackAction(data));
-        };
+    console.log("current state", currentState);
+     const customerId=customerIdRef.current.value;
+     const promise = fetchByCustomerId(customerId);
+     promise.then(response=>{
+         const newState={...currentState,feedback:response.data};
+         setNewState (newState);
+        }).catch(error=>{
+            const newState={...currentState,errMsg:error.message};
+            setNewState(newState);
+        }
+        )
+
+    
+
+}
 
         
 

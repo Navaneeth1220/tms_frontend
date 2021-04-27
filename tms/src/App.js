@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import AddFeedback from './component/feedback/AddFeedback';
-import FeedbackHome from "./component/feedback/FeedbackHome";
-import FeedbackNavbar from "./component/feedback/FeedbackNavbar";
-import store from "./redux/feedbackredux/feedbackredux";
+import AddFeedback from './component/Feedback/AddFeedback';
+
+import store from "./redux/store";
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import GetFeedbackDetailsCustomerId from "./component/feedback/GetFeedbackDetailsCustomerId";
-import DisplayFeedbackList from './component/feedback/DisplayFeedbackList';
+import GetFeedbackDetails from './component/Feedback/GetFeedbackDetails';
+import GetFeedbackDetailsCustomerId from './component/Feedback/GetFeedbackDetailsCustomerId';
+
+
 
 
 
@@ -16,9 +17,7 @@ function App() {
   
   return (
     <div>
-      <Provider store={store}>
-      <AddFeedback/>
-      </Provider>
+    
     </div>
   )
 }

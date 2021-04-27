@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import DisplayFeedbackDetails from "./DisplayFeedbackDetails";
 import commonStyle from "./commonStyle.module.css"
-import { addFeedbackAction } from "../../redux/feedbackredux/addfeedback/addFeedbackAction";
-import { data } from "jquery";
-import { useDispatch, useSelector } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import { useSelector , useDispatch} from "react-redux";
+import {addFeedbackAction} from "../../redux/feedbackredux/addfeedback/addFeedbackAction";
+import {addFeedback} from "../../service/FeedbackService";
+
 
 export default function AddFeedback() {
 
@@ -11,59 +14,61 @@ export default function AddFeedback() {
     const feedbackRef = React.createRef();
     const ratingRef = React.createRef();
     const customerIdRef = React.createRef();
-    const dispatch=useDispatch();
-    const initialState = {
+    
 
+    const initialState = {
         feedback: undefined,
         rating: undefined,
         customerId:undefined,
+        formStatus: "",
     };
-
 
      const [currentState, setNewState] = useState(initialState);
 
-     const response = useSelector(state => {
-
+     const response= useSelector(state =>{
         return (
-
             {
-
-                feed: state.addFeedback.feed,
-                error: state.addFeedback.error
+                feed : state.addFeedback.feed,
+                error : state.addFeedback.error
             }
         );
-    });
+});
 
-    const submitHandler = (event) => {
+const dispatch  = useDispatch();
 
-        event.preventDefault();
-        //setNewState({ ...currentState, formStatus: "form submitted successfully" });
 
-        let formData = { ...currentState };
-        console.log("form data that has to be sent to service", formData)
-        dispatch(addFeedbackAction(formData))
+
+const submitHandler = (event) =>{
+    event.preventDefault();
+
     
-      };  
+    
+    let data={...currentState};
+    console.log("form data that has to be sent to service",data);
+    dispatch(addFeedbackAction(data));
+};
 
-      const setFieldState = (ref) => {
+const setFieldState = (ref) =>{
+    const fieldName = ref.current.name;
+    const fieldValue = ref.current.value;
+    console.log("inside set field state field name = "+fieldName+" fieldValue= "+fieldValue);
 
-        const fieldName = ref.current.name;
-        const fieldValue = ref.current.value;
-        const newState = {
+    const newState = {
 
-            ...currentState,
-            [fieldName]: fieldValue,
-            errMsg: undefined,
-        };
-
-        setNewState(newState);
-
-
+        ...currentState,
+        [fieldName] : fieldValue,
+        errMsg : undefined,
+        
     };
+
+    setNewState(newState);
+
+    console.log("new state",newState);
+};
 
     return (
 
-      <div className="container">
+      <div className="form-group">
           <form onSubmit={(event) => submitHandler(event)}>
               <div className="form-group">
                   <label>Enter Feedback</label>
@@ -96,16 +101,15 @@ export default function AddFeedback() {
                       </select>
                   <br /> 
               </div>
-              <div classname="form-group">
-                  <label>Enter Customer Id</label>
-                  <input classname="form-control" name="customerId" type="number" 
-                  ref={customerIdRef} onChange={()=>setFieldState(customerIdRef)}/>
-              </div>
+              <div className="form-group">
+                  <label>Customer Id</label>
+                <input type="number" name="customerId" ref={customerIdRef} onChange={()=> setFieldState(customerIdRef)}/>                               </div>
               <button type="submit" className="btn btn-primary">Add Feedback</button>
           </form>
+          <h2>{currentState.formStatus}</h2>
 
           {
-              response.feed ? (
+                response.feed ? (
 
                   <div>
                       <h2>Feedback Added Successfully</h2>
