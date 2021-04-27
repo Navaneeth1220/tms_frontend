@@ -14,6 +14,7 @@ import GetBusDetailsOnRequest from './components/Bus/getBusDetailsonRequest';
 import GetRouteDetailsOnRequest from './components/Route/getRouteDetailsonRequest';
 import GetAllBuses from './components/Bus/GetAllBuses';
 import GetAllRoutes from './components/Route/GetAllRoutes';
+import FetchBusByRoute from './components/Route/fetchBusByRoute';
 
 function App() {
   /*let mockRoute={
@@ -46,7 +47,7 @@ function App() {
                     <Route exact path="/allbuses" component={GetAllBuses} />
                     <Route exact path="/busdetails/:busId" component = { GetBusDetailsByParameter } />
                     <Route exact path="/busdetailsonrequest" component={GetBusDetailsOnRequest} />
-                    
+                    <Route exact path="/fetchbusbyroute" component={FetchBusByRoute} />
                   </Switch>
 
 

@@ -8,7 +8,7 @@ export default function DisplayBusList({ buses }) {
 
         <div>
 
-            <ul>
+            <ol>
 
                 {
                     buses.map((bus) => <li key={bus.busId}>
@@ -20,7 +20,7 @@ export default function DisplayBusList({ buses }) {
 
                     </li>)
                 }
-            </ul>
+            </ol>
 
 
         </div>

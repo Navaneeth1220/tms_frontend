@@ -48,6 +48,13 @@ export default function RouteNavBar(){
                             </Link>
                         </li>
 
+                        <li className="nav-item">
+
+                            <Link to="/fetchbusbyroute" className="nav-link">
+                            <span>Bus Details For This Route On Request</span>
+                            </Link>
+                        </li>
+
 
                     </ul>
                 

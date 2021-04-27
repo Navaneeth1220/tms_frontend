@@ -35,4 +35,10 @@ function allRoutes() {
 
 }
 
-export { fetchRoute, addRoute, allRoutes };
+function fetchBusByRoute(routeId){
+    const url = baseUrl+"/routes/getBus/"+routeId;
+    const promise = axios.get(url);
+    return promise;
+}
+
+export { fetchRoute, addRoute, allRoutes, fetchBusByRoute };
