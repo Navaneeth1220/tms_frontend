@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import GetCustomerDetailsById from "./components/customer/GetCustomerDetailsById";
 import GetCustomerDetailsByRouteId from"./components/customer/GetCustomerDetailsRouteId";
 import GetCustomerDetailsPackageId from"./components/customer/GetCustomerDetailsPackageId";
+import { fetchCustomerByPackageId } from './service/CustomerService';
 //import DisplayCustomerDetails from './components/DisplayCustomerDetails';
 //import DisplayCustomerList from './components/DisplayCustomerList';
 //import GetCustomerDetails from './components/GetCustomerDetails';
@@ -19,6 +20,9 @@ function App() {
   
   return (
 
+    <div>
+     {<GetCustomerDetailsPackageId/>}
+   
     <Provider store={store} >
 
     <Router>
@@ -35,7 +39,7 @@ function App() {
 
               <Route exact path="/addcustomer" component={AddCustomer} />
               {<Route exact Path="/customerdetailsById" component={GetCustomerDetailsById}/>}
-              {/*<Route exact Path="/customerdetailsByRouteId" component={GetCustomerDetailsByRouteId}/>*/}
+              {<Route exact Path="/customerdetailsByRouteId" component={GetCustomerDetailsByRouteId}/>}
               
             </Switch>
 
@@ -45,38 +49,8 @@ function App() {
 
     </Router>
   </Provider>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     
   );
 }

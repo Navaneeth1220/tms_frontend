@@ -1,8 +1,9 @@
-/*import React, { useState } from "react"
+import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchCustomerByPackageId } from "../../redux/customer/fetchCustomerByPackageId/fetchCustomerByPackageIdActions"
+import { fetchCustomerByPackageId } from "../../service/CustomerService";
 import commonStyle from "./commonStyle.module.css"
 import DisplayCustomerDetails from "./DisplayCustomerDetails"
+
 
 
 
@@ -13,18 +14,11 @@ export default function GetCustomerDetailsPackageId() {
 
     const packageIdRef = React.createRef();
 
-    const intitalState = { packageId: undefined };
+    const intitalState = { packageId: undefined ,customers : undefined ,errMsg : undefined };
 
     const [currentState, setNewState] = useState(intitalState);
 
-    const response=useSelector(state=>{
-        return ({
-          customer:state.fetchCustomerByPackageId.customer,
-          error: state.fetchCustomerByPackageId.error
-        });
-    })
-
-    const dispatch=useDispatch();
+    
 
 
 
@@ -32,7 +26,17 @@ export default function GetCustomerDetailsPackageId() {
         event.preventDefault();
         console.log("current state", currentState);
          const packageId=packageIdRef.current.value;
-         dispatch(fetchCustomerByPackageId(packageId));
+         const promise = fetchCustomerByPackageId(packageId);
+         promise.then(response=>{
+             const newState={...currentState,customers:response.data};
+             setNewState (newState);
+            }).catch(error=>{
+                const newState={...currentState,errMsg:error.message};
+                setNewState(newState);
+            }
+            )
+
+        
 
     }
 
@@ -60,20 +64,20 @@ export default function GetCustomerDetailsPackageId() {
 
                 </form>
 
-                {response.customer ? (
+                {currentState.customers ? (
                     <div>
-                        <DisplayCustomerDetails customer={response.customer} />
+                        <DisplayCustomerList customers={currentState.customers} />
                     </div>
                 ) : ''}
 
 
                 {
-                    response.error ? (
+                    currentState.errMsg ? (
 
                         <div className={commonStyle.error}>
                             Request processing unsuccessful
                             <br />
-                            {response.error}
+                            {currentState.errMsg}
 
                         </div>
                     ) : ''
@@ -85,4 +89,3 @@ export default function GetCustomerDetailsPackageId() {
     );
 
 }
-*/

@@ -16,7 +16,7 @@ function fetchCustomerByRouteid(routeId) {
     return promise;
 
 }
-function fetchCustomerByPackageid(packageId) {
+function fetchCustomerByPackageId(packageId) {
 
     const url = baseUrl + "/customers/package/" + packageId;
     const promise = axios.get(url);
@@ -44,4 +44,4 @@ function addCustomer(data) {
 
 
 
-export { fetchCustomerbyid, addCustomer ,fetchCustomerByPackageid ,fetchCustomerByRouteid  };
+export { fetchCustomerbyid, addCustomer ,fetchCustomerByPackageId ,fetchCustomerByRouteid  };

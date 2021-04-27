@@ -8,7 +8,12 @@ export default function Home() {
       <div className={commonStyle.content}>
         <div>
           This is customer app
-          <br /> various features available are
+          <br /> 
+          various features available are :
+          <br />
+          AddCustomer
+          <br />
+          GetCustomerDetailsById
         </div>
       </div>
     </div>

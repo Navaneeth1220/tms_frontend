@@ -1,9 +1,8 @@
-/*import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import DisplayCustomerDetails from "./DisplayCustomerDetails"
 import commonStyle from "./commonStyle.module.css"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import { fetchCustomerByRouteId} from "../../redux/customer/fetchCustomerByRouteId/fetchCustomerByRouteIdActions"
 
 export default function GetCustomerDetailsByRouteId() {
     
@@ -14,14 +13,6 @@ export default function GetCustomerDetailsByRouteId() {
 
     const [currentState, setNewState] = useState(intitalState);
 
-    const response=useSelector(state=>{
-        return ({
-          customer:state.fetchCustomerByRouteId.customer,
-          error: state.fetchCustomerByRouteId.error
-        });
-    })
-
-    const dispatch=useDispatch();
 
 
 
@@ -29,7 +20,6 @@ export default function GetCustomerDetailsByRouteId() {
         event.preventDefault();
         console.log("current state", currentState);
          const routeId=routeIdRef.current.value;
-         dispatch(fetchCustomerByRouteId(routeId));
 
     }
 
@@ -49,7 +39,7 @@ export default function GetCustomerDetailsByRouteId() {
                     <div className="form-group">
                         <label>Enter  Route id</label>
 
-                        <input name="routeId" type="number" ref={routeIdRef} onChange={setFieldState} className="form-control" />
+                        <input name="routeId" type="text" ref={routeIdRef} onChange={setFieldState} className="form-control" />
 
                     </div>
 
@@ -82,4 +72,3 @@ export default function GetCustomerDetailsByRouteId() {
     );
 
 }
-*/

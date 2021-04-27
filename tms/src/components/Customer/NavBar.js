@@ -43,6 +43,21 @@ export default function CustomerNavbar() {
                             </Link>
                         </li>
 
+                         <li className="nav-item">
+
+                            <Link to="/customerdetailsByPackageId" className="nav-link" >
+                                <span>Get Customer Details By Package Id</span>
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+
+                            <Link to="/customerdetailsByRouteId" className="nav-link" >
+                                <span>Get Customer Details By Route Id</span>
+                            </Link>
+                        </li>
+
+
 
 
                     </ul>
