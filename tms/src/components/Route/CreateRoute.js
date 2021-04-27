@@ -1,67 +1,144 @@
-import { useDebugValue } from "react";
 import React, { useState } from "react";
 import DisplayRouteDetails from "./DisplayRouteDetails";
-import errorStyle from "./errorStyle.module.css"
-
+import validationMessage from '../../validationMessage';
+import { useDispatch, useSelector } from "react-redux";
+import { addRouteAction} from "../../redux/routeredux/addRoute/addRouteActions";
+import style from "./style.css";
 
 export default function CreateRoute(){
 
-    const route = {
+    /*const route = {
         routeId : "r2",
         routeFrom : "Delhi",
         routeTo :"Manali",
         pickupPoint:"Bus Stand",
         fare : 600
-    };
+    };*/
 
     const routeFromRef = React.createRef();
     const routeToRef = React.createRef();
     const pickupPointRef = React.createRef();
     const fareRef = React.createRef();
 
-    const response={route:route, errMsg:undefined };
+    
 
     const initialState = {
         routeFrom : undefined,
         routeTo : undefined,
         pickupPoint : undefined,
         fare : undefined,
-        formStatus : "",
+        validations: {routeFrom:undefined,routeTo:undefined},
+        //formStatus : "",
     };
 
-    const [currentState,setNewState] = useState(initialState);
+    const [currentState, setNewState] = useState(initialState);
 
-    const submitHandler = (event) =>{
+    const response = useSelector(state => {
+
+        return (
+
+            {
+
+                route: state.addRoute.route,
+                error: state.addRoute.error
+            }
+        );
+    });
+
+    const dispatch = useDispatch();
+
+
+    const submitHandler = (event) => {
+
         event.preventDefault();
-//        setNewState({...currentState,formStatus:"Form submitted"});
-        let formData={...currentState};
-        console.log("form data that has to be sent to service",formData);
+        //setNewState({ ...currentState, formStatus: "form submitted successfully" });
+        if (currentState.validations.routeFrom || currentState.validations.routeTo) {
+
+            return;
+        }
+        let data = { ...currentState };
+        console.log("form data that has to be sent to service", data);
+        dispatch(addRouteAction(data));
+
     };
 
-    const setFieldState = (ref) =>{
+    const setFieldState = (ref) => {
+
         const fieldName = ref.current.name;
         const fieldValue = ref.current.value;
-        console.log("inside set field state field name = "+fieldName+" fieldValue= "+fieldValue);
+        console.log("inside set field state field name = " + fieldName + " fieldValue= " + fieldValue);
+        let validationMsg;
+        if (ref === routeFromRef) {
+
+            validationMsg = validateRouteFrom(fieldValue);
+        }
+
+        if (ref === routeToRef) {
+
+            validationMsg = validateRouteTo(fieldValue);
+        }
+
+       
+
+        const newValidations = { ...currentState.validations, [fieldName]: validationMsg };
         const newState = {
 
             ...currentState,
-            [fieldName] : fieldValue,
-            errMsg : undefined,
+            [fieldName]: fieldValue,
+            route: undefined,
+            errMsg: undefined,
+            validations: newValidations
         };
 
         setNewState(newState);
+
+    };
+
+    const validateRouteFrom = (routeFrom) => {
+
+        if (routeFrom.length < 3) {
+
+            return validationMessage.routeFromSmallThanLengthThree;
+        }
+
+        return undefined;
     }
+
+    const validateRouteTo = (routeTo) => {
+
+        if (routeTo.length < 3) {
+
+            return validationMessage.routeToSmallThanLengthThree;
+        }
+
+        return undefined;
+    }
+
 
     return (
         <div>
-            <form onSubmit = {(event)=> submitHandler(event)}>
+            <form onSubmit = {(event)=> submitHandler(event)} className={style}>
                 <div>
                     <label>Route From </label>
                     <input name="routeFrom" type="text" ref={routeFromRef} onChange={()=>setFieldState(routeFromRef)}/>
+                    {currentState.validations.routeFrom ? (
+                        <div>
+                            {currentState.validations.routeFrom}
+                        </div>
+                    ) : (
+                        ""
+                    )}
                 </div>
                 <div>
                 <label>Route To </label>
-                    <input name="Route To" type="text" ref={routeToRef} onChange={()=>setFieldState(routeToRef)}/>
+                    <input name="routeTo" type="text" ref={routeToRef} onChange={()=>setFieldState(routeToRef)}/>
+                    {currentState.validations.routeTo ? (
+                        <div>
+                            {currentState.validations.routeTo}
+                        </div>
+                    ) : (
+                        ""
+                    )}
                 </div>
                 <div>
                     <label>Pickup Point </label>
@@ -90,7 +167,7 @@ export default function CreateRoute(){
 
             {
                 response.errMsg ? (
-                    <div className={errorStyle.error}>
+                    <div className={style.error}>
 
                         {response.errMsg}
                     </div>

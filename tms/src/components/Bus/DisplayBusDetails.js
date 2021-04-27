@@ -1,3 +1,4 @@
+import style from "./style.css";
 export default function DisplayBusDetails({bus}){
 
     let {busId,busType,busNumber,capacity} = bus;
@@ -5,7 +6,7 @@ export default function DisplayBusDetails({bus}){
     return (
        
        
-       <div>
+       <div className= {style.form}>
             Bus ID is {busId}
             <br/>
             Bus Type is {busType}

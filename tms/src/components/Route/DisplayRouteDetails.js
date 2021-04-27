@@ -1,3 +1,4 @@
+import style from "./style.css";
 export default function DisplayRouteDetails({route}){
 
     let {routeId,routeFrom,routeTo,pickupPoint,fare} = route;
@@ -5,7 +6,7 @@ export default function DisplayRouteDetails({route}){
     return (
        
        
-       <div>
+       <div className={style.content}>
             Route id is {routeId}
             <br/>
             Route From is {routeFrom}
