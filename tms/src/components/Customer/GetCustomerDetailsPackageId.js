@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+/*import React, { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchCustomerByPackageId } from "../../redux/customer/fetchCustomerByPackageId/fetchCustomerByPackageIdActions"
 import commonStyle from "./commonStyle.module.css"
@@ -85,4 +85,4 @@ export default function GetCustomerDetailsPackageId() {
     );
 
 }
-
+*/

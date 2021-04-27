@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 
-export default function HotelNavbar() {
+export default function CustomerNavbar() {
 
     return (
         <div>
@@ -43,19 +43,6 @@ export default function HotelNavbar() {
                             </Link>
                         </li>
 
-                        <li className="nav-item">
-
-                            <Link to="/customerdetailsByRouteId" className="nav-link" >
-                                <span>Get Customer Details By Route Id</span>
-                            </Link>
-                        </li>
-
-                         <li className="nav-item">
-
-                            <Link to="/customerdetailsByPackageId" className="nav-link" >
-                                <span>Get Customer Details By Package Id</span>
-                            </Link>
-                        </li>
 
 
                     </ul>

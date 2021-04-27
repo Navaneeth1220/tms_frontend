@@ -105,7 +105,7 @@ export default function AddCustomer() {
 
         if (customerPassword.length < 8) {
 
-            return validationMessage.customerPasswordSmallthanLenghtEight;
+            return validationMessage.customerPasswordSmallThanLengthEight;
         }
 
         return undefined;

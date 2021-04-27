@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+/*import React, { useEffect, useState } from "react"
 import DisplayCustomerDetails from "./DisplayCustomerDetails"
 import commonStyle from "./commonStyle.module.css"
 import { useSelector } from "react-redux"
@@ -82,3 +82,4 @@ export default function GetCustomerDetailsByRouteId() {
     );
 
 }
+*/

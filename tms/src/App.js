@@ -34,9 +34,9 @@ function App() {
               <Route exact path="/" component={Home} />
 
               <Route exact path="/addcustomer" component={AddCustomer} />
-              {/*<Route exact Path="/customerdetailsById" component={GetCustomerDetailsById}/>*/}
+              {<Route exact Path="/customerdetailsById" component={GetCustomerDetailsById}/>}
               {/*<Route exact Path="/customerdetailsByRouteId" component={GetCustomerDetailsByRouteId}/>*/}
-              <Route exact Path="/customerdetailsByPackageId" component={GetCustomerDetailsPackageId}/>
+              
             </Switch>
 
           </div>
