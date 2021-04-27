@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react"
 import DisplayCustomerDetails from "./DisplayCustomerDetails"
 import commonStyle from "./commonStyle.module.css"
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
+import { fetchCustomerByRouteid } from "../../service/CustomerService";
+import DisplayCustomerList from "./DisplayCustomerList";
+
 
 export default function GetCustomerDetailsByRouteId() {
     
 
     const routeIdRef = React.createRef();
 
-    const intitalState = { routeId: undefined };
+    const intitalState = { routeId: undefined , customers : undefined, errMsg : undefined};
 
     const [currentState, setNewState] = useState(intitalState);
 
@@ -20,12 +21,23 @@ export default function GetCustomerDetailsByRouteId() {
         event.preventDefault();
         console.log("current state", currentState);
          const routeId=routeIdRef.current.value;
+         const promise = fetchCustomerByRouteid(routeId);
+         promise.then(response=>{
+             const newState={...currentState,customers:response.data};
+             setNewState (newState);
+            }).catch(error=>{
+                const newState={...currentState,errMsg:error.message};
+                setNewState(newState);
+            }
+            )
+
+        
 
     }
 
     const setFieldState = () => {
         const idValue = routeIdRef.current.value;
-        const newState = { ...currentState, routeId: idValue, customer: undefined, errMsg: undefined };
+        const newState = { ...currentState, routeId: idValue, customers: undefined, errMsg: undefined };
         setNewState(newState);
     }
 
@@ -47,20 +59,20 @@ export default function GetCustomerDetailsByRouteId() {
 
                 </form>
 
-                {response.customer ? (
+                {currentState.customers ? (
                     <div>
-                        <DisplayCustomerDetails customer={response.customer} />
+                        <DisplayCustomerList customers={currentState.customers} />
                     </div>
                 ) : ''}
 
 
                 {
-                    response.error ? (
+                    currentState.errMsg ? (
 
                         <div className={commonStyle.error}>
                             Request processing unsuccessful
                             <br />
-                            {response.error}
+                            {currentState.errMsg}
 
                         </div>
                     ) : ''

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchCustomerByPackageId } from "../../service/CustomerService";
 import commonStyle from "./commonStyle.module.css"
 import DisplayCustomerDetails from "./DisplayCustomerDetails"
+import DisplayCustomerList from "./DisplayCustomerList";
 
 
 

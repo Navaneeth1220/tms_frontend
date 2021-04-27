@@ -13,10 +13,9 @@ export default function DisplayCustomerList({ customers }) {
                 {
                     customers.map((customer) => <li key={customer.customerId}>
 
-                        <Link to={`/customerdetails/${customer.customerId}`} >
+                    
                             <span>{customer.customerId} {customer.customerName} </span>
 
-                        </Link>
 
                     </li>)
                 }

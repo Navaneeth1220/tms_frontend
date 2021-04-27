@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import AddCustomer from './components/customer/AddCustomer';
-import Home from "./components/customer/Home";
-import Navbar from "./components/customer/NavBar";
+import AddCustomer from './components/Customer/AddCustomer';
+import Home from "./components/Customer/Home";
+import Navbar from "./components/Customer/NavBar";
 import store from "./redux/store";
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import GetCustomerDetailsById from "./components/customer/GetCustomerDetailsById";
-import GetCustomerDetailsByRouteId from"./components/customer/GetCustomerDetailsRouteId";
-import GetCustomerDetailsPackageId from"./components/customer/GetCustomerDetailsPackageId";
-import { fetchCustomerByPackageId } from './service/CustomerService';
+import GetCustomerDetailsById from "./components/Customer/GetCustomerDetailsById";
+import GetCustomerDetailsByRouteId from"./components/Customer/GetCustomerDetailsRouteId";
+import GetCustomerDetailsPackageId from"./components/Customer/GetCustomerDetailsPackageId";
+
 //import DisplayCustomerDetails from './components/DisplayCustomerDetails';
 //import DisplayCustomerList from './components/DisplayCustomerList';
 //import GetCustomerDetails from './components/GetCustomerDetails';
@@ -22,6 +22,7 @@ function App() {
 
     <div>
      {<GetCustomerDetailsPackageId/>}
+     {<GetCustomerDetailsByRouteId/>}
    
     <Provider store={store} >
 
@@ -37,9 +38,7 @@ function App() {
 
               <Route exact path="/" component={Home} />
 
-              <Route exact path="/addcustomer" component={AddCustomer} />
-              {<Route exact Path="/customerdetailsById" component={GetCustomerDetailsById}/>}
-              {<Route exact Path="/customerdetailsByRouteId" component={GetCustomerDetailsByRouteId}/>}
+          
               
             </Switch>
 
