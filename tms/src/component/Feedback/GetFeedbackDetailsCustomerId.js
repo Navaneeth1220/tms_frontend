@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+/*import React, { useEffect, useState } from "react"
 import DisplayFeedbackDetails from "./DisplayFeedbackDetails"
 import commonStyle from "./commonStyle.module.css"
 import { useSelector } from "react-redux"
@@ -45,4 +45,4 @@ export default function GetFeedbackDetailsCustomerId({customerId}) {
     
     )
 
-}
+}*/

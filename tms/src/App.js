@@ -1,38 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
-import DisplayFeedbackDetails from './component/feedback/DisplayFeedbackDetails';
-import DisplayFeedbackList from './component/feedback/DisplayFeedbackList';
 import AddFeedback from './component/feedback/AddFeedback';
+import FeedbackHome from "./component/feedback/FeedbackHome";
+import FeedbackNavbar from "./component/feedback/FeedbackNavbar";
+import store from "./redux/feedbackredux/feedbackredux";
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import GetFeedbackDetailsCustomerId from "./component/feedback/GetFeedbackDetailsCustomerId";
+
+
 
 function App() {
-    const feed1 = {
-     feedbackId: 5,
-     customerId:10,
-     customerName: "Ajith",
-     feedback: "Super",
-     rating: 3,
-    
-   }
 
-   const feed2 = {
-    feedbackId: 8,
-    customerId:6,
-    customerName: "Ajay Samuel",
-    feedback: "Super and clean",
-    rating: 5,
-   
-  }
-
-  const feeds=[feed1,feed2];
+  
   return (
-    <div >
-      
-      { /*<DisplayFeedbackDetails feed={feed1} />*/}
 
-      {/*<DisplayFeedbackList feeds={feeds} />*/}
-      {<AddFeedback />}
-    </div>
-  );
+    <Provider store={store} >
+
+    <Router>
+      <FeedbackNavbar />
+      <div className="container" style={{ marginTop: '50px' }}>
+
+        <div className="row">
+
+          <div className="col-md-9">
+
+            <Switch>
+
+              <Route exact path="/" component={FeedbackHome} />
+
+              <Route exact path="/addfeedback" component={AddFeedback} />
+              <Route exact Path="/feedbackdetailsByCustomerId" component={GetFeedbackDetailsCustomerId}/>
+            </Switch>
+
+          </div>
+        </div>
+      </div>
+
+    </Router>
+  </Provider>
+  )
 }
-
 export default App;

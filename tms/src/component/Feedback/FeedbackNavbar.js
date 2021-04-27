@@ -1,16 +1,61 @@
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
-import { Link } from "react-router-dom";
 
-function OrderNavbar() {
-  return (
-    <div className="container navbar mt-3">
-      <Link to="/feedbackhome/feedbackdetails/:id">Feedback Details by Feedback id</Link>
+export default function FeedbackNavbar() {
 
-      <Link to="/feedbackhome/feedbacklist/:id"> List of Feedbacks by Feedback id</Link>
+    return (
+        <div>
 
-      <Link to="/feedbackhome/feedbackbycustomerid/:id">Feedback Details by Customer id</Link>
-    </div>
-  );
+
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <Link to="/" className="navbar-brand" >
+                    Feedback Module
+                </Link>
+
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                            <Link to="/" className="nav-link" >
+                                <span>FeedbackHome </span>
+                                <span className="sr-only">(current)</span>
+
+                            </Link>
+
+
+                        </li>
+
+                        <li className="nav-item">
+
+                            <Link to="/addfeedback" className="nav-link" >
+                                <span>Add Feedback</span>
+
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+
+                            <Link to="/feedbackdetailsByCustomerId" className="nav-link" >
+                                <span>Get Feedback Details By Customer Id</span>
+                            </Link>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </nav>
+
+
+
+
+
+
+        </div>
+
+    )
+
 }
-
-export default FeedbackNavbar;

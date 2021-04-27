@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import addFeedbackReducer from "./addFeedback/addFeedbackReducer";
+import addFeedbackReducer from "./addfeedback/addFeedbackReducer";
 
 const store = createStore(
 
