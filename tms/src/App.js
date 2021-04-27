@@ -7,6 +7,7 @@ import store from "./redux/feedbackredux/feedbackredux";
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import GetFeedbackDetailsCustomerId from "./component/feedback/GetFeedbackDetailsCustomerId";
+import DisplayFeedbackList from './component/feedback/DisplayFeedbackList';
 
 
 
@@ -14,31 +15,11 @@ function App() {
 
   
   return (
-
-    <Provider store={store} >
-
-    <Router>
-      <FeedbackNavbar />
-      <div className="container" style={{ marginTop: '50px' }}>
-
-        <div className="row">
-
-          <div className="col-md-9">
-
-            <Switch>
-
-              <Route exact path="/" component={FeedbackHome} />
-
-              <Route exact path="/addfeedback" component={AddFeedback} />
-              <Route exact Path="/feedbackdetailsByCustomerId" component={GetFeedbackDetailsCustomerId}/>
-            </Switch>
-
-          </div>
-        </div>
-      </div>
-
-    </Router>
-  </Provider>
+    <div>
+      <Provider store={store}>
+      <AddFeedback/>
+      </Provider>
+    </div>
   )
 }
 export default App;

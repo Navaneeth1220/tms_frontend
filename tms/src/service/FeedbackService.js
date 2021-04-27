@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8181";
+const baseUrl = "http://localhost:8080";
 
 function fetchFeedbackById(feedbackId) {
 
@@ -34,4 +34,10 @@ function fetchAllFeedbacks() {
 
 }
 
-export { fetchFeedbackById, addFeedback, fetchAllFeedbacks };
+function fetchByCustomerId(customerId){
+
+const url=baseUrl + "/feedbacks/customer/"+customerId;
+const promise= axios.get(url);
+return promise;
+}
+export { fetchFeedbackById, addFeedback, fetchAllFeedbacks,fetchByCustomerId };

@@ -1,12 +1,12 @@
 import { addFeedback } from "../../../service/FeedbackService";
-import store from "../store";
+import store from "../../store";
 import addFeedbackConstants from "./addFeedbackConstants.js";
 
-function addFeedbackSuccess() {
+function addFeedbackSuccess(feed) {
 
     return ({
 
-        feed: feed,
+        feed:feed,
         error: '',
         type: addFeedbackConstants.success
     });
@@ -18,7 +18,7 @@ function addFeedbackFail(error) {
     return (
 
         {
-            pack: undefined,
+            feed: undefined,
             error: error,
             type: addFeedbackConstants.fail
         });

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import DisplayFeedbackDetails from "./DisplayFeedbackDetails";
 import commonStyle from "./commonStyle.module.css"
-import "bootstrap/dist/css/bootstrap.min.css"
+import { addFeedbackAction } from "../../redux/feedbackredux/addfeedback/addFeedbackAction";
+import { data } from "jquery";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function AddFeedback() {
 
@@ -9,16 +11,28 @@ export default function AddFeedback() {
     const feedbackRef = React.createRef();
     const ratingRef = React.createRef();
     const customerIdRef = React.createRef();
-    
-      const response={   feed:undefined,errMsg: undefined};
+    const dispatch=useDispatch();
     const initialState = {
+
         feedback: undefined,
         rating: undefined,
         customerId:undefined,
-        formStatus: "",
     };
 
+
      const [currentState, setNewState] = useState(initialState);
+
+     const response = useSelector(state => {
+
+        return (
+
+            {
+
+                feed: state.addFeedback.feed,
+                error: state.addFeedback.error
+            }
+        );
+    });
 
     const submitHandler = (event) => {
 
@@ -27,7 +41,7 @@ export default function AddFeedback() {
 
         let formData = { ...currentState };
         console.log("form data that has to be sent to service", formData)
-    
+        dispatch(addFeedbackAction(formData))
     
       };  
 
@@ -82,30 +96,30 @@ export default function AddFeedback() {
                       </select>
                   <br /> 
               </div>
-              <div className="form-group">
-                <input type="text" placeholder="add comments" name="Comments"> 
-                </input>
+              <div classname="form-group">
+                  <label>Enter Customer Id</label>
+                  <input classname="form-control" name="customerId" type="number" 
+                  ref={customerIdRef} onChange={()=>setFieldState(customerIdRef)}/>
               </div>
               <button type="submit" className="btn btn-primary">Add Feedback</button>
           </form>
-          <h2>{currentState.formStatus}</h2>
 
           {
-              currentState.feed ? (
+              response.feed ? (
 
                   <div>
                       <h2>Feedback Added Successfully</h2>
-                      <DisplayFeedbackDetails feed={currentState.feed} />
+                      <DisplayFeedbackDetails feed={response.feed} />
                   </div>
 
               ) : ""}
 
           {
-              currentState.errMsg ? (
+              response.errMsg ? (
 
                   <div className={commonStyle.error}>
                       Feedback Request Was Not Successful <br />
-                      {currentState.errMsg}
+                      {response.errMsg}
                   </div>
 
               ) : ""}

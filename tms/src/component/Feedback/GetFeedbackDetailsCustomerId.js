@@ -1,48 +1,71 @@
-/*import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import DisplayFeedbackDetails from "./DisplayFeedbackDetails"
 import commonStyle from "./commonStyle.module.css"
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
+import {fetchByCustomerId} from "../../service/FeedbackService";
+import { addFeedbackAction } from "../../redux/feedbackredux/addfeedback/addFeedbackAction";
 
-export default function GetFeedbackDetailsCustomerId({customerId}) {
+export default function GetFeedbackDetailsCustomerId() {
+ const intialState={feedback:undefined,customerId:undefined,errMsg:undefined};
+ const customerIdRef=React.createRef();
+ const [currentState,setNewState]=useState(intialState);
+ 
+ const submitHandler = (event) => {
+    event.preventDefault();
+         let data = {...currentState};
+         console.log("data sent to service", data);
+         dispatch(addFeedbackAction(data));
+        };
 
-    const currentState=useSelector(state=>{
-        return({
-            feedback:state.fetchFeedbackById.feedback,
-            error:state.fetchFeedbackById.error
+        
 
-        })
-    })
-
-    const dispatch=useDispatch();
-
-    const fetchFeedbackOnRender=()=>{
-        const id=props.match.params.id;
-        dispatch(fetchFeedbackById(id));
-    }
     
-    useEffect(fetchFeedbackOnRender(),[]);
 
+    const setFieldState = () => {
+        const idValue = customerIdRef.current.value;
+        const newState = { ...currentState, customerId: idValue, feedback: undefined, errMsg: undefined };
+        setNewState(newState);
+    }
     return (
         <div>
-            {
-                currentState.feedback ? (
+            <h1> Get feedback details By customer id</h1>
+
+            <div className={commonStyle.content}>
+                <form onSubmit={submitHandler} className={commonStyle.content}>
+
+                    <div className="form-group">
+                        <label>Enter  Customer id</label>
+
+                        <input name="customerId" type="number" ref={customerIdRef} onChange={setFieldState} className="form-control" />
+
+                    </div>
+
+                    <button className="btn btn-primary">Get Feedback</button>
+
+                </form>
+
+                {currentState.feedback ? (
                     <div>
-                        <DisplayFeedbackDetails feedback={currentState.feedback} />
+                        <DisplayFeedbackDetails feed={currentState.feedback} />
                     </div>
+                ) : ''}
 
-                ) : ""}
 
-            {
-                currentState.errMsg ? (
-                    <div className={commonStyle.error}>
-                        Feedback Request Processing Unsuccessful
-                        <br />
-                        {currentState.errMsg}
-                    </div>
-                ) : ""}
+                {
+                    currentState.errMsg ? (
+
+                        <div className={commonStyle.error}>
+                            Request processing unsuccessful
+                            <br />
+                            {currentState.errMsg}
+
+                        </div>
+                    ) : ''
+
+                }
+            </div>
         </div>
-    
-    )
 
-}*/
+    );
+
+
+}
