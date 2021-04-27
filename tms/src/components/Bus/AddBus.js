@@ -101,7 +101,7 @@ export default function CreateBus(){
                 <div className="form-group">
                 <label>Choose a Bus Type </label>
                    <br></br>
-                    <select name = "Bus Type" id = "busType" ref={busTypeRef} onChange={()=>setFieldState(busTypeRef)} className="form-control" required> 
+                    <select name = "busType" id = "busType" ref={busTypeRef} onChange={()=>setFieldState(busTypeRef)} className="form-control" required> 
                     <option value="none" disabled selected >Select Bus Type</option> 
                         <option value="AC/Seater">AC/Seater</option>
                         <option value = "Non-AC/Sleeper">Non-AC/Sleeper</option>
@@ -111,11 +111,11 @@ export default function CreateBus(){
                 </div>
                 <div className="form-group">
                 <label>Bus Number </label>
-                    <input name="Bus Number" type="text" ref={busNumberRef} onChange={()=>setFieldState(busNumberRef)} className="form-control" required/>
+                    <input name="busNumber" type="text" ref={busNumberRef} onChange={()=>setFieldState(busNumberRef)} className="form-control" required/>
                 </div>
                 <div className="form-group">
                     <label>Capacity </label>
-                    <input name="Capacity" type="number" ref={capacityRef} onChange={()=>setFieldState(capacityRef)} className="form-control" required/>
+                    <input name="capacity" type="number" ref={capacityRef} onChange={()=>setFieldState(capacityRef)} className="form-control" required/>
                     {currentState.validations.capacity ? (
                         <div>
                             {currentState.validations.capacity }

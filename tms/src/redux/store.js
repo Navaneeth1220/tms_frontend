@@ -7,7 +7,8 @@ import allBusesReducer from './busredux/allBuses/allBusesReducers';
 import addRouteReducer from './routeredux/addRoute/addRouteReducers';
 import allRoutesReducer from './routeredux/allRoutes/allRoutesReducers';
 import fetchRouteReducer from './routeredux/fetchRoute/fetchRouteReducers';
-
+import getBusOnRequestReducer from './busredux/getbusonrequest/getBusOnRequestReducers';
+import getRouteOnRequestReducer from './routeredux/getrouteonrequest/getRouteOnRequestReducers';
 const store = createStore(
 
     combineReducers({
@@ -15,9 +16,11 @@ const store = createStore(
         addBus: addBusReducer,
         fetchBus: fetchBusReducer,
         allBuses: allBusesReducer,
+        getBusOnRequest: getBusOnRequestReducer,
         addRoute: addRouteReducer,
         allRoutes: allRoutesReducer,
         fetchRoute: fetchRouteReducer,
+        getRouteOnRequest: getRouteOnRequestReducer,
 
     }),
 

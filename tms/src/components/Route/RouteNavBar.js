@@ -43,8 +43,8 @@ export default function RouteNavBar(){
 
                         <li className="nav-item">
 
-                            <Link to="/routedetails" className="nav-link">
-                            <span>Route Details</span>
+                            <Link to="/routedetailsonrequest" className="nav-link">
+                            <span>Route Details On Request</span>
                             </Link>
                         </li>
 

@@ -10,10 +10,11 @@ import RouteNavBar from './components/Route/RouteNavBar';
 import CreateRoute from './components/Route/CreateRoute';
 import RouteHome from './components/Route/RouteHome';
 import BusHome from './components/Bus/BusHome';
+import GetBusDetailsOnRequest from './components/Bus/getBusDetailsonRequest';
+import GetRouteDetailsOnRequest from './components/Route/getRouteDetailsonRequest';
 import GetAllBuses from './components/Bus/GetAllBuses';
 import GetAllRoutes from './components/Route/GetAllRoutes';
-import {addBus} from './service/BusService';
-import {addRoute} from './service/RouteService';
+
 function App() {
   /*let mockRoute={
     routeId: "r1",
@@ -39,12 +40,12 @@ function App() {
                     <Route exact path="/addRoute" component = { CreateRoute } />
                     <Route exact path="/allroutes" component={GetAllRoutes} />
                     <Route exact path="/routedetails/:routeId" component = { GetRouteDetailsByParameter } />
-                    
+                    <Route exact path="/routedetailsonrequest" component={GetRouteDetailsOnRequest} />
                     <Route exact path="/" component = { BusHome } />
                     <Route exact path="/addBus" component = { AddBus } />
                     <Route exact path="/allbuses" component={GetAllBuses} />
                     <Route exact path="/busdetails/:busId" component = { GetBusDetailsByParameter } />
-                   
+                    <Route exact path="/busdetailsonrequest" component={GetBusDetailsOnRequest} />
                     
                   </Switch>
 

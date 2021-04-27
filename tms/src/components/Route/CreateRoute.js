@@ -118,9 +118,9 @@ export default function CreateRoute(){
     return (
         <div>
             <form onSubmit = {(event)=> submitHandler(event)} className={style}>
-                <div>
+                <div className="form-group">
                     <label>Route From </label>
-                    <input name="routeFrom" type="text" ref={routeFromRef} onChange={()=>setFieldState(routeFromRef)}/>
+                    <input name="routeFrom" type="text" ref={routeFromRef} onChange={()=>setFieldState(routeFromRef)} className="form-control" required/>
                     {currentState.validations.routeFrom ? (
                         <div>
                             {currentState.validations.routeFrom}
@@ -129,9 +129,9 @@ export default function CreateRoute(){
                         ""
                     )}
                 </div>
-                <div>
+                <div className= "form-group">
                 <label>Route To </label>
-                    <input name="routeTo" type="text" ref={routeToRef} onChange={()=>setFieldState(routeToRef)}/>
+                    <input name="routeTo" type="text" ref={routeToRef} onChange={()=>setFieldState(routeToRef)} className="form-control" required/>
                     {currentState.validations.routeTo ? (
                         <div>
                             {currentState.validations.routeTo}
@@ -140,13 +140,13 @@ export default function CreateRoute(){
                         ""
                     )}
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Pickup Point </label>
-                    <input name="pickupPoint" type="text" ref={pickupPointRef} onChange={()=>setFieldState(pickupPointRef)}/>
+                    <input name="pickupPoint" type="text" ref={pickupPointRef} onChange={()=>setFieldState(pickupPointRef)} className="form-control" required/>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Fare </label>
-                    <input name="fare" type="number" ref={fareRef} onChange={()=>setFieldState(fareRef)}/>
+                    <input name="fare" type="number" ref={fareRef} onChange={()=>setFieldState(fareRef)} className="form-control" required/>
                     <br/>
                     <button type="submit">Create Route</button>
                 </div>
