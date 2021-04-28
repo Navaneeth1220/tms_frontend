@@ -11,7 +11,7 @@ import addPackageReducer from "./packageredux/addpackage/addPackageReducer";
 import fetchPackageByIdReducer from "./packageredux/fetchpackagebyid/fetchPackageByIdReducer";
 import fetchAllPackagesReducer from "./packageredux/fetchallpackages/fetchAllPackagesReducer";
 import getPackageOnRequestReducer from "./packageredux/getpackageonrequest/getPackageOnRequestReducer";
-
+import updatePackageReducer from "./packageredux/updatepackage/updatePackageReducer";
 
 
 const store = createStore(
@@ -26,6 +26,7 @@ const store = createStore(
         fetchAllPackages: fetchAllPackagesReducer,
         fetchPackageById: fetchPackageByIdReducer,
         getPackageOnRequest: getPackageOnRequestReducer,
+        updatePackage: updatePackageReducer,
 
     }),
 

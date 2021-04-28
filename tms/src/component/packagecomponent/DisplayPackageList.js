@@ -9,7 +9,7 @@ export default function DisplayPackageList({ packs }) {
 
         <div>
 
-            <ul>
+            <ol>
 
                 {
                     packs.map((pack) => <li key={pack.packageId}>
@@ -21,7 +21,7 @@ export default function DisplayPackageList({ packs }) {
 
                     </li>)
                 }
-            </ul>
+            </ol>
 
 
         </div>

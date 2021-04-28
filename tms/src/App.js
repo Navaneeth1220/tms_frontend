@@ -22,7 +22,7 @@ import GetPackageDetailsOnRequest from './component/packagecomponent/GetPackageD
 import store from './redux/store';
 import { addPackage } from './service/PackageService';
 import GetPackageDetailsByParameter from './component/packagecomponent/GetPackageDetailsByParameter';
-
+import UpdatePackage from './component/packagecomponent/UpdatePackage';
 
 function App() {
 
@@ -153,11 +153,12 @@ function App() {
                   <Route exact path="/hotelhome" component={HotelHome} />
                   <Route exact path="/allhotels" component={GetAllHotels} />
                   <Route exact path="/addhotel" component={AddHotel} />
-                  <Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter} />
+                  {<Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter} />}
                   <Route exact path="/hoteldetailsonrequest" component={GetHotelDetailsOnRequest} />
                   <Route exact path="/packagehome" component={PackageHome} />
                   <Route exact path="/allpackages" component={GetAllPackages} />
                   <Route exact path="/addpackage" component={AddPackage} />
+                  <Route exact path="/updatepackage" component={UpdatePackage} />
                   <Route exact path="/packagedetails/:packageId" component={GetPackageDetailsByParameter} />
                   <Route exact path="/packagedetailsonrequest" component={GetPackageDetailsOnRequest} />
 

@@ -9,7 +9,7 @@ export default function DisplayHotelList({ hotels }) {
 
         <div>
 
-            <ul>
+            <ol>
 
                 {
                     hotels.map((hotel) => <li key={hotel.hotelId}>
@@ -21,7 +21,7 @@ export default function DisplayHotelList({ hotels }) {
 
                     </li>)
                 }
-            </ul>
+            </ol>
 
 
         </div>

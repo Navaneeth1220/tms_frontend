@@ -29,6 +29,23 @@ function addPackage(data) {
 
 }
 
+function updatePackage(data) {
+
+    const url = baseUrl + "/packages/update/" + data.packageId;
+    let requestData = {
+
+        packageName: data.packageName,
+        packageDescription: data.packageDescription,
+        packageType: data.packageType,
+        packageCost: data.packageCost,
+        hotelId: data.hotelId
+    };
+    console.log("inside updatePackage service, request data", requestData);
+    const promise = axios.put(url, requestData);
+    return promise;
+
+}
+
 function fetchAllPackages() {
 
     const url = baseUrl + "/packages";
@@ -37,4 +54,4 @@ function fetchAllPackages() {
 
 }
 
-export { fetchPackageById, addPackage, fetchAllPackages };
+export { fetchPackageById, addPackage, fetchAllPackages, updatePackage };

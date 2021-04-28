@@ -41,6 +41,14 @@ export default function PackageNavbar() {
                             </Link>
                         </li>
 
+                        <li className="nav-item">
+
+                            <Link to="/updatepackage" className="nav-link" >
+                                <span>Update Package</span>
+
+                            </Link>
+                        </li>
+
 
 
 
