@@ -23,6 +23,22 @@ function fetchCustomerByPackageId(packageId) {
     return promise;
 
 }
+function updateCustomer(data) {
+
+    const url = baseUrl + "/customers/update/" + data.customerId;
+    let requestData = {
+
+        customerName: data.customerName,
+        customerPassword: data.customerPassword,
+        address: data.address,
+        mobileNo: data.mobileNo,
+        email: data.email
+    };
+    console.log("inside updateCustomer service, request data", requestData);
+    const promise = axios.put(url, requestData);
+    return promise;
+
+}
 
 function addCustomer(data) {
 
@@ -44,4 +60,4 @@ function addCustomer(data) {
 
 
 
-export { fetchCustomerbyid, addCustomer ,fetchCustomerByPackageId ,fetchCustomerByRouteid  };
+export { fetchCustomerbyid, addCustomer ,fetchCustomerByPackageId ,fetchCustomerByRouteid ,updateCustomer  };
