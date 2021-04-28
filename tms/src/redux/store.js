@@ -1,17 +1,17 @@
 
-
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import addReportReducer from "./addReport/addReportReducer";
-
-
+import getReportOnRequestReducer from "./getReportOnRequest/getReportOnRequestReducer";
 
 const store = createStore(
 
     combineReducers({
 
-        addReport: addReportReducer
+        addReport: addReportReducer,
+        getReportOnRequest: getReportOnRequestReducer,
+
 
 
     }),
@@ -20,24 +20,5 @@ const store = createStore(
 );
 
 export default store;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -1,7 +1,7 @@
 
-import { addHotel } from "../../../service/HotelService";
-import store from "../../store";
-import addHotelConstants from "./addHotelConstants";
+import { addReport } from "../../service/ReportService";
+import store from "../store";
+import addReportConstants from "./addReportConstants";
 
 function addReportSuccess(report) {
 

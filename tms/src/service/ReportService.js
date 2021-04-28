@@ -17,9 +17,6 @@ function addReport(data) {
     let requestData = {
 
         reportName: data.reportName,
-        reportType: data.reportType,
-        
- 
     };
 
     console.log("inside addReport service, request data", requestData);
