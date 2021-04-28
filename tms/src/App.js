@@ -1,35 +1,53 @@
 import logo from './logo.svg';
 import './App.css';
-import AddReport from './components/AddReport';
-import DisplayReportDetails from './components/DisplayReportDetails';
-import DisplayReportList from './components/DisplayReportList';
-import GetReportDetails from './components/GetReportDetails';
+
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+//import DisplayReportDetails from './report/components/DisplayReportDetails';
+//import DisplayReportList from './report/components/DisplayReportList';
+//import GetReportDetails from './report/components/GetReportDetails';
+import AddReport from './components/report/AddReport';
+import DisplayReportDetails from './components/report/DisplayReportDetails';
+import ReportNavbar from './components/report/ReportNavbar';
+import ReportHome from './components/report/ReportHome';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 function App() {
 
-  const report1={
-    reportId :"1",
-    reportName:"GoaTrip",
-    reportType:"accounts"
+    return (
 
-  }
-  const report2={
-    reportId :"2",
-    reportName:"PuneTrip",
-    reportType:"hotel details"
-
-  }
-
-  const reports =[report1,report2];
+      <div>
+        <Provider store={store} >
   
-  return (
-    <div >
-      {<AddReport/>}
-      {/*<DisplayReportDetails report={report1}/>*/}
-     {/*<DisplayReportList reports={reports}/>*/}
-     {/*<GetReportDetails>*/}
-    </div>
-  );
-}
+          <Router>
+            <ReportNavbar />
+
+            <div className="container" style={{ marginTop: '50px' }}>
+  
+              <div className="row">
+  
+                <div className="col-md-9">
+  
+                  <Switch>
+  
+                    
+                  <Route exact path="/reporthome" component={ReportHome}/>
+                    <Route exact path="/addReport" component={AddReport} />
+                
+  
+                  </Switch>
+  
+                </div>
+              </div>
+            </div>
+  
+          </Router>
+        </Provider>
+  
+      </div>
+    );
+  }
+  
+  
 
 export default App;
