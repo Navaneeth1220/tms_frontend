@@ -23,7 +23,13 @@ export default function BookingNavBar(){
 
                             </Link>
 
+                        </li>
+                        <li className="nav-item active">
+                        <Link to="/hotelhome" className="nav-link" >
+                                <span>Hotel </span>
+                                <span className="sr-only">(current)</span>
 
+                            </Link>
                         </li>
 
                     </ul>

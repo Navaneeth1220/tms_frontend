@@ -28,7 +28,7 @@ export default function HotelHome() {
               <Link to="/allhotels" className="nav-link" >
                 <span>Get All Hotels</span>
               </Link>
-            </li>*
+            </li>
 
             <li className="nav-item">
 
