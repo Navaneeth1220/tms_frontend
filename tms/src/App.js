@@ -14,6 +14,7 @@ import GetBookingOnUserIdRequest from './component/Booking/GetBookingOnUserIdReq
 import Home from './component/Home'
 import HotelHome from './component/hotelcomponent/HotelHome'
 import FeedBackHome from './component/Feedback/FeedbackHome';
+import ReportHome from './component/reportcomponent/ReportHome';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
                     <Route exact path="/useridbooking" component = {GetBookingOnUserIdRequest}/>
                     <Route exact path="/hotelhome" component={HotelHome}/>
                     <Route exact path="/feedbackhome" component={FeedBackHome}/>
+                    <Route exact path="/reporthome" component={ReportHome}/>
                   </Switch>
 
 

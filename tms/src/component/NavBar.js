@@ -37,6 +37,12 @@ export default function BookingNavBar(){
                                 <span className="sr-only">(current)</span>
                         </Link>
                         </li>
+                        <li className="nav-item active">
+                        <Link to="/reporthome" className="nav-link" >
+                                <span>Report </span>
+                                <span className="sr-only">(current)</span>
+                        </Link>
+                        </li>
 
                     </ul>
                 
