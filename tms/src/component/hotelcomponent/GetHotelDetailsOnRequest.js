@@ -61,7 +61,7 @@ export default function GetHotelDetailsOnRequest() {
 
                     </div>
 
-                    <button className="btn btn-primary">Get Hotel</button>
+                    <button className="btn-btn-primary">Get Hotel</button>
 
                 </form>
 
