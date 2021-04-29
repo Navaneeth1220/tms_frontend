@@ -7,7 +7,7 @@ export default function BookingNavBar(){
         
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link to="/" className="navbar-brand">
-                Booking Module
+                Trip Booking System
             </Link>
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">

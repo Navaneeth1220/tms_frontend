@@ -1,5 +1,5 @@
 import { useDebugValue } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DisplayBookingDetails from "./DisplayBookingDetails";
 import style from "./style.css"
 import validationMessage from '../../validationMessage';
@@ -31,18 +31,17 @@ export default function AddBooking(){
     const paymentModeRef = React.createRef();
     const bankNameRef = React.createRef();
     const cardNoRef = React.createRef();
-    
+    const netAmountRef = React.createRef();
 
     const initialState = {
         bookingType : undefined,
         bookingTitle : undefined,
         description : undefined,
         userId : 1,
-        packageId : 8,
+        packageId : undefined,
         paymentMode : undefined,
         bankName : undefined,
         cardNo : undefined,
-        netAmount : 1000.0,
         paymentStatus : "true",
         routeId : "R1",
         validations : {cardNo:undefined, bankName:undefined},
@@ -54,6 +53,8 @@ export default function AddBooking(){
 
 
     const [currentState,setNewState] = useState(initialState);
+
+    const [netAmount,setNetAmount]=useState(0);
 
     const response= useSelector(state =>{
             return (
@@ -70,7 +71,6 @@ export default function AddBooking(){
 
     const submitHandler = (event) =>{
         event.preventDefault();
-//        setNewState({...currentState,formStatus:"Form submitted"});
 
         if(currentState.validations.cardNo || currentState.validations.bankName){
             return;
@@ -78,8 +78,9 @@ export default function AddBooking(){
         
         const packageId = parseInt(currentState.packageId);
         
+
         
-        let data={...currentState,packageId:packageId};
+        let data={...currentState,packageId:packageId,netAmount};
         console.log("form data that has to be sent to service",data);
         dispatch(addBookingAction(data));
     };
@@ -115,6 +116,7 @@ export default function AddBooking(){
             validations : newValidations
         };
 
+        
         setNewState(newState);
     };
 
@@ -132,6 +134,8 @@ export default function AddBooking(){
         return undefined;
     }
 
+    useEffect(() => { console.log(netAmount);netAmountRef.current.value=netAmount; }, [netAmount]);
+
     return (
         <div>
             <form onSubmit = {(event)=> submitHandler(event)} className={style}>
@@ -146,7 +150,7 @@ export default function AddBooking(){
                 </div>
                 <div className="form-group">
                     <label>Booking Type </label>
-                    <select name="bookingType" id="type" ref={bookingTypeRef} onChange={()=>setFieldState(bookingTypeRef)} className="form-control" required>
+                    <select name="bookingType" id="type" ref={bookingTypeRef} onChange={()=> {setFieldState(bookingTypeRef);bookingTypeRef.current.value === "economy"? setNetAmount(1000) : setNetAmount(2000)}  } className="form-control" required>
                         <option value="none" disabled selected hidden>Select booking Type</option>
                         <option value="economy">Economy</option>
                         <option value="executive">Executive</option>
@@ -171,7 +175,7 @@ export default function AddBooking(){
                 <div className="form-group">
     
                     <label>Amount </label>
-                    <input name="netAmount" type="number"  className="form-control" disabled/>
+                    <input name="netAmount" type="number" ref={netAmountRef} onChange={()=>setFieldState(netAmountRef)} className="form-control" disabled/>
                 </div>
 
                 <div className="form-group">
