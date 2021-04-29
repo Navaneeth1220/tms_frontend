@@ -1,6 +1,6 @@
 
 import { updatePackage } from "../../../service/PackageService";
-import store from "../store";
+import store from "../../bookingredux/store";
 import updatePackageConstants from "./updatePackageConstants";
 
 function updatePackageSuccess(pack) {

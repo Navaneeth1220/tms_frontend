@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import addCustomerReducer from "./customer/addCustomer/addCustomerReducer";
-import fetchCustomerByIdReducer from "./customer/fetchCustomerById/fetchCustomerByIdReducer";
-import updateCustomerReducer from "./customer/updateCustomer/updateCustomerReducer";
+import addCustomerReducer from "./addCustomer/addCustomerReducer";
+import fetchCustomerByIdReducer from "./fetchCustomerById/fetchCustomerByIdReducer";
+import updateCustomerReducer from "./updateCustomer/updateCustomerReducer";
 
 
 const store = createStore(

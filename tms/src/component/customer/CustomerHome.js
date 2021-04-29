@@ -14,7 +14,7 @@ export default function CustomerHome() {
           <br /> Thefeatures available are :
           <ul className="list-group mt-4">
             <li className="list-group-item">
-              <Link to="/addCustomer">Add Customer</Link>
+              <Link to="/addcustomer">Add Customer</Link>
             </li>
             <li className="list-group-item">
               <Link to="/customerdetailsById">View Customer By Id</Link>

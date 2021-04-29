@@ -1,6 +1,6 @@
 
 import { fetchAllPackages } from "../../../service/PackageService";
-import store from "../store";
+import store from "../../bookingredux/store";
 import fetchAllPackagesConstants from "./fetchAllPackagesConstants";
 
 

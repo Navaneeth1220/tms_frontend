@@ -1,6 +1,6 @@
 
 import { fetchPackageById } from "../../../service/PackageService";
-import store from "../store";
+import store from "../../bookingredux/store";
 import fetchPackageByIdConstants from "./fetchPackageByIdConstants";
 
 function fetchPackageByIdRequest() {
