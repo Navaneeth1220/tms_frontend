@@ -2,7 +2,7 @@ import { useDebugValue } from "react";
 import React, { useState } from "react";
 import DisplayBookingDetails from "./DisplayBookingDetails";
 import style from "./style.css"
-import validationMessage from '../../validationMessage';
+import validationMessage from './validationMessage';
 import { useSelector , useDispatch} from "react-redux";
 import { addBooking } from "../../service/Booking/BookingService";
 import {addBookingAction} from "../../redux/bookingredux/addBooking/addBookingActions"
