@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import DisplayCustomerDetails from "./DisplayCustomerDetails";
-import validationMessage from '../../validationMessage';
+import validationMessage from '../customer/validationMessage';
 import commonStyle from "./commonStyle.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCustomerAction } from "../../redux/customer/updateCustomer/updateCustomerActions";
