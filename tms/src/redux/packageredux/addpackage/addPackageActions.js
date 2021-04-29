@@ -1,6 +1,6 @@
 
 import { addPackage } from "../../../service/PackageService";
-import store from "../../store";
+import store from "../store";
 import addPackageConstants from "./addPackageConstants";
 
 function addPackageSuccess(pack) {

@@ -1,6 +1,6 @@
 
 import { fetchHotelById } from "../../../service/HotelService";
-import store from "../../store";
+import store from "../../packageredux/store";
 import getHotelOnRequestConstants from "./getHotelOnRequestConstants";
 
 function getHotelOnRequestSuccess(hotel) {

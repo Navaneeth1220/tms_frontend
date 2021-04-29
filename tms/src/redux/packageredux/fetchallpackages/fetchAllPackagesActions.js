@@ -1,6 +1,6 @@
 
 import { fetchAllPackages } from "../../../service/PackageService";
-import store from "../../store";
+import store from "../store";
 import fetchAllPackagesConstants from "./fetchAllPackagesConstants";
 
 

@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import DisplayPackageDetails from "./DisplayPackageDetails";
-import validationMessage from '../../validationMessage';
+import validationMessage from './validationMessage';
 import commonStyle from "./commonStyle.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePackageAction } from "../../redux/packageredux/updatepackage/updatePackageActions";

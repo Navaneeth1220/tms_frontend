@@ -1,6 +1,6 @@
 
 import { fetchPackageById } from "../../../service/PackageService";
-import store from "../../store";
+import store from "../store";
 import getPackageOnRequestConstants from "./getPackageOnRequestConstants";
 
 function getPackageOnRequestSuccess(pack) {
