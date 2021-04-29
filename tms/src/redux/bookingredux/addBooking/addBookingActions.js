@@ -1,5 +1,5 @@
 import {addBooking} from "../../../service/Booking/BookingService";
-import store from "../../store";
+import store from "../../bookingredux/store";
 import addBookingConstants from "./addBookingConstants"
 
 function addBookingSuccess(booking){

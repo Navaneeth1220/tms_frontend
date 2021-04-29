@@ -1,5 +1,5 @@
 import {findByUserId} from "../../../service/Booking/BookingService";
-import store from "../../store";
+import store from "../../bookingredux/store";
 import getBookingOnUserIdRequestConstants from "./getBookingOnUserIdRequestConstants";
 
 function getBookingOnUserIdRequestSuccess(booking){
