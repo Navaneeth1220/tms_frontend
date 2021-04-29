@@ -1,5 +1,5 @@
 import { addBus } from "../../../service/BusService";
-import store from "../../store";
+import store from "../../routeredux/store";
 import addBusConstants from "./addBusConstants";
 
 function addBusSuccess(bus) {

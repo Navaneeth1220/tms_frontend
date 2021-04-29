@@ -1,5 +1,5 @@
 import { fetchBus } from "../../../service/BusService";
-import store from "../../store";
+import store from "../../routeredux/store";
 import getBusOnRequestConstants from "./getBusOnRequestConstants";
 
 function getBusOnRequestSuccess(bus) {

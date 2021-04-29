@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DisplayRouteDetails from './DisplayRouteDetails';
-import validationMessage from '../../validationMessage';
+import validationMessage from './validationMessage';
 import style from "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { updateRouteAction } from "../../redux/routeredux/updateRoute/updateRouteActions";

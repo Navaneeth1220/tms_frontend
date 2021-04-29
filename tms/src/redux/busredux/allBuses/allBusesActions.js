@@ -1,5 +1,5 @@
 import { allBuses } from "../../../service/BusService";
-import store from "../../store";
+import store from "../../routeredux/store";
 import allBusesConstants from './allBusesConstants'
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./style.css";
-import validationMessage from '../../validationMessage';
+import validationMessage from '.././Route/validationMessage';
 import { useDispatch, useSelector } from "react-redux";
 import DisplayBusDetails from "./DisplayBusDetails";
 import { addBusAction } from "../../redux/busredux/addBus/addBusActions";

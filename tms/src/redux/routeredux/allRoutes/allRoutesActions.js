@@ -1,5 +1,5 @@
 import { allRoutes } from "../../../service/RouteService";
-import store from "../../store";
+import store from "../store";
 import allRoutesConstants from './allRoutesConstants'
 
 
