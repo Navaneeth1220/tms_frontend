@@ -1,12 +1,14 @@
+
 import React, { useState } from "react";
 import DisplayCustomerDetails from "./DisplayCustomerDetails";
-import commonStyle from "./commonStyle.module.css"
-import validationMessage from "../customer/validationMessage";
+import validationMessage from './validationMessage';
+import commonStyle from "./commonStyle.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addCustomerAction } from "../../redux/customer/addCustomer/addCustomerActions";
+import { updateCustomerAction } from "../../redux/customer/updateCustomer/updateCustomerActions";
 
+export default function UpdateCustomer() {
 
-export default function AddCustomer() {
+    const customerIdRef = React.createRef();
     const customerNameRef = React.createRef();
     const customerPasswordRef = React.createRef();
     const addressRef = React.createRef();
@@ -15,31 +17,29 @@ export default function AddCustomer() {
 
     const initialState = {
 
+        customerId:undefined,    
         customerName: undefined,
         customerPassword: undefined,
         address: undefined,
         mobileNo: undefined,
         email: undefined,
         validations: { customerName: undefined, customerPassword: undefined, address: undefined },
-        //formStatus: ""
     };
 
     const [currentState, setNewState] = useState(initialState);
 
+
     const response = useSelector(state => {
+        return {
 
-        return (
+            customer: state.updateCustomer.customer,
+            error: state.updateCustomer.error,
+        };
 
-            {
 
-                customer: state.addCustomer.customer,
-                error: state.addCustomer.error
-            }
-        );
     });
 
     const dispatch = useDispatch();
-
 
     const submitHandler = (event) => {
 
@@ -52,7 +52,7 @@ export default function AddCustomer() {
         }
         let data = { ...currentState };
         console.log("form data that has to be sent to service", data);
-        dispatch(addCustomerAction(data));
+        dispatch(updateCustomerAction(data));
 
     };
 
@@ -82,8 +82,8 @@ export default function AddCustomer() {
 
             ...currentState,
             [fieldName]: fieldValue,
-            customer: undefined,
-            errMsg: undefined,
+            // customer: undefined,
+            //errMsg: undefined,
             validations: newValidations
         };
 
@@ -122,14 +122,26 @@ export default function AddCustomer() {
     }
 
 
+
+
     return (
-
         <div>
-            <h1>Add Customer </h1>
-
+            <h1>Update Customer </h1>
             <form onSubmit={submitHandler} className={commonStyle.content}>
+
                 <div className="form-group">
-                    <label>Enter Customer Name </label>
+                    <label>Enter Customer Id</label>
+                    <input
+                        name="customerId"
+                        type="number"
+                        ref={customerIdRef}
+                        onChange={() => setFieldState(customerIdRef)}
+                        className="form-control"
+                        required />
+                </div>
+
+                <div className="form-group">
+                    <label>Enter Customer Name</label>
                     <input
                         name="customerName"
                         type="text"
@@ -155,7 +167,8 @@ export default function AddCustomer() {
                         ref={customerPasswordRef}
                         onChange={() => setFieldState(customerPasswordRef)}
                         className="form-control"
-                        required></input>
+                        required />
+
                     {currentState.validations.customerPassword ? (
                         <div className={commonStyle.error}>
                             {currentState.validations.customerPassword}
@@ -163,10 +176,11 @@ export default function AddCustomer() {
                     ) : (
                         ""
                     )}
+
                 </div>
 
                 <div className="form-group">
-                    <label>Enter address</label>
+                    <label>Enter Address</label>
                     <textarea id="address" rows="4" cols="50"
                         name="address"
                         type="text"
@@ -181,11 +195,10 @@ export default function AddCustomer() {
                     ) : (
                         ""
                     )}
-
                 </div>
 
                 <div className="form-group">
-                    <label>Enter mobilenumber</label>
+                    <label>Enter MobileNo</label>
                     <input
                         name="mobileNo"
                         type="text"
@@ -197,7 +210,7 @@ export default function AddCustomer() {
                 </div>
 
                 <div className="form-group">
-                    <label>Enter email</label>
+                    <label>Enter Email </label>
                     <input
                         name="email"
                         type="text"
@@ -207,9 +220,9 @@ export default function AddCustomer() {
                         required />
 
                     <br />
-                    <button className="btn-btn-primary">Add Customer</button>
-                </div>
 
+                    <button className="btn-btn-primary">Update Customer</button>
+                </div>
             </form>
 
 
@@ -217,7 +230,7 @@ export default function AddCustomer() {
                 response.customer ? (
 
                     <div>
-                        <h3>Customer Added Successfully</h3>
+                        <h3>Customer Updated Successfully</h3>
                         <DisplayCustomerDetails customer={response.customer} />
                     </div>
 
@@ -232,6 +245,7 @@ export default function AddCustomer() {
                     </div>
 
                 ) : ""}
+
         </div>
     );
 }
