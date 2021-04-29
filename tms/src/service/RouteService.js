@@ -41,4 +41,19 @@ function fetchBusByRoute(routeId){
     return promise;
 }
 
-export { fetchRoute, addRoute, allRoutes, fetchBusByRoute };
+function updateRoute(data){
+    const url = baseUrl+"/routes/update/route/"+data.routeId;
+    let requestData = {
+
+        routeFrom: data.routeFrom,
+        routeTo: data.routeTo,
+        pickupPoint: data.pickupPoint,
+        fare: data.fare
+    };
+
+    console.log("inside updateRoute service, request data", requestData);
+    const promise = axios.put(url, requestData);
+    return promise;
+}
+
+export { fetchRoute, addRoute, allRoutes, fetchBusByRoute, updateRoute };

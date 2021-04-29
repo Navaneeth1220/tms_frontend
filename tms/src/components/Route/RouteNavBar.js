@@ -54,7 +54,13 @@ export default function RouteNavBar(){
                             <span>Bus Details For This Route On Request</span>
                             </Link>
                         </li>
+                        
+                        <li className="nav-item">
 
+                            <Link to="/updateroute" className="nav-link">
+                            <span>Update Route</span>
+                            </Link>
+                        </li>
 
                     </ul>
                 

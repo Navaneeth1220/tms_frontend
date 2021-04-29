@@ -10,6 +10,8 @@ import fetchRouteReducer from './routeredux/fetchRoute/fetchRouteReducers';
 import getBusOnRequestReducer from './busredux/getbusonrequest/getBusOnRequestReducers';
 import getRouteOnRequestReducer from './routeredux/getrouteonrequest/getRouteOnRequestReducers';
 import fetchBusByRouteReducer from './routeredux/fetchbusbyroute/fetchBusByRouteReducers';
+import updateRouteReducer from './routeredux/updateRoute/updateRouteReducers';
+
 const store = createStore(
 
     combineReducers({
@@ -23,7 +25,7 @@ const store = createStore(
         fetchRoute: fetchRouteReducer,
         getRouteOnRequest: getRouteOnRequestReducer,
         fetchBusByRoute: fetchBusByRouteReducer,
-
+        updateRoute: updateRouteReducer, 
     }),
 
     composeWithDevTools(applyMiddleware(thunk))
