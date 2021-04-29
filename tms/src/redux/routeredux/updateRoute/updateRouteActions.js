@@ -1,5 +1,5 @@
 import { updateRoute } from '../../../service/RouteService';
-import store from "../store";
+import store from "../../bookingredux/store";
 import updateRouteConstants from "./updateRouteConstants";
 
 function updateRouteSuccess(route){

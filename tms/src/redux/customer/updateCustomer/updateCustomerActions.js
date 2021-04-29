@@ -1,5 +1,5 @@
 import { updateCustomer } from "../../../service/CustomerService";
-import store from "../store";
+import store from "../../bookingredux/store";
 import updateCustomerConstants from "./updateCustomerConstants";
 
 function updateCustomerSuccess(customer) {

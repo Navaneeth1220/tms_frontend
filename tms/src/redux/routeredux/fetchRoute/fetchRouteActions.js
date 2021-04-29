@@ -1,5 +1,5 @@
 import { fetchRoute } from "../../../service/RouteService";
-import store from "../store";
+import store from "../../bookingredux/store";
 import fetchRouteConstants from "./fetchRouteConstants";
 
 function fetchRouteRequest() {

@@ -1,5 +1,5 @@
 import {fetchBusByRoute} from '../../../service/RouteService';
-import store from '../store';
+import store from '../../bookingredux/store';
 import fetchBusByRouteConstants from './fetchBusByRouteConstants';
 
 function fetchBusByRouteSuccess(bus){

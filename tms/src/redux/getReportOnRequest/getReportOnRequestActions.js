@@ -1,6 +1,6 @@
 
 import { fetchReportById } from "../../service/ReportService";
-import store from "../addReport/store";
+import store from "../bookingredux/store";
 import getReportOnRequestConstants from "./getReportOnRequestConstants";
 
 function getReportOnRequestSuccess(report) {

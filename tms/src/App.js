@@ -30,6 +30,27 @@ import GetPackageDetailsByParameter from './component/packagecomponent/GetPackag
 import GetAllHotels from './component/hotelcomponent/GetAllHotels'
 import GetHotelDetailsByParameter from './component/hotelcomponent/GetHotelDetailsByParameter'
 import GetHotelDetailsOnRequest from './component/hotelcomponent/GetHotelDetailsOnRequest'
+import UpdateCustomer from './component/customer/UpdateCustomer'
+import GetCustomerDetailsById from './component/customer/GetCustomerDetailsById'
+import GetCustomerDetailsRouteId from './component/customer/GetCustomerDetailsRouteId'
+import AddReport from './component/reportcomponent/AddReport'
+import GetReportDetailsOnRequest from './component/reportcomponent/GetReportDetailsOnRequest';
+import AddFeedback from './component/Feedback/AddFeedback'
+import GetFeedbackDetails from './component/Feedback/GetFeedbackDetails'
+import GetFeedbackDetailsCustomerId from './component/Feedback/GetFeedbackDetailsCustomerId'
+import AddBus from './components/Bus/AddBus'
+import GetAllBuses from './components/Bus/GetAllBuses'
+import getBusDetailsonRequest from './components/Bus/getBusDetailsonRequest'
+import GetBusDetailsByParameter from './components/Bus/GetBusDetailsByParameter'
+import CreateRoute from './components/Route/CreateRoute'
+import GetAllRoutes from './components/Route/GetAllRoutes'
+import GetRouteDetailsByParameter from './components/Route/GetRouteDetailsByParameter'
+import getRouteDetailsOnRequest from './components/Route/getRouteDetailsonRequest'
+import fetchBusByRoute from './components/Route/fetchBusByRoute'
+import UpdateRoute from './components/Route/UpdateRoute'
+import { addRoute } from './service/RouteService';
+import FetchBusByRoute from './components/Route/fetchBusByRoute';
+
 
 
 function App() {
@@ -72,6 +93,31 @@ function App() {
                     <Route exact path="/allhotels" component={GetAllHotels}/>
                     <Route exact path="/hoteldetailsonrequest" component={GetHotelDetailsOnRequest}/>
                     <Route exact path="/hoteldetails/:hotelId" component={GetHotelDetailsByParameter}/>
+                    <Route exact path="/addcustomer" component={AddCustomer}/>
+                    <Route exact path="/updateCustomer" component={UpdateCustomer}/>
+                    <Route exact path="/customerdetailsById" component={GetCustomerDetailsById}/>
+                    <Route exact path="/customerdetailsByRouteId" component={GetCustomerDetailsRouteId}/>
+                    <Route exact path="/addreport" component={AddReport}/>
+                    <Route exact path="/getreportdetailsonrequest" component={GetReportDetailsOnRequest}/>
+                    <Route exact path="/addfeedback" component={AddFeedback}/>
+                    <Route exact path="/getfeedbackonrequest" component={GetFeedbackDetails}/>
+                    <Route exact path="/getfeedbackbycustomer" component={GetFeedbackDetailsCustomerId}/>
+                    <Route exact path="/addbus" component={AddBus}/>
+                    <Route exact path="/allbuses" component={GetAllBuses}/>
+                    <Route exact path="/busdetailsonrequest" component={getBusDetailsonRequest}/>
+                    <Route exact path="/busdetails/:busId" component={GetBusDetailsByParameter}/>
+                    <Route exact path="/addRoute" component={CreateRoute}/>
+                    <Route exact path="/allroutes" component={GetAllRoutes}/>
+                    <Route exact path="/routedetailsonrequest" component={getRouteDetailsOnRequest}/>
+                    <Route exact path="/fetchbusbyroute" component={fetchBusByRoute}/>
+                    <Route exact path="/updateroute" component={UpdateRoute}/>
+
+
+
+
+                    
+                    
+                    
                   </Switch>
 
 

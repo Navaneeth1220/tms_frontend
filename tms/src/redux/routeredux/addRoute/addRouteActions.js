@@ -1,5 +1,5 @@
 import { addRoute } from "../../../service/RouteService";
-import store from "../store";
+import store from "../../bookingredux/store";
 import addRouteConstants from "./addRouteConstants";
 
 function addRouteSuccess(route) {

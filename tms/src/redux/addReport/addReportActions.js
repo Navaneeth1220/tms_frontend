@@ -1,6 +1,6 @@
 
 import { addReport } from "../../service/ReportService";
-import store from "../addReport/store";
+import store from "../bookingredux/store";
 import addReportConstants from "./addReportConstants";
 
 function addReportSuccess(report) {

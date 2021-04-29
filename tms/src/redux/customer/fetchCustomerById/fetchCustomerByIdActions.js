@@ -1,5 +1,5 @@
 import { fetchCustomerbyid }from "../../../service/CustomerService"
-import store from "../store";
+import store from "../../bookingredux/store";
 import fetchCustomerByIdConstants from "./fetchCustomerByIdConstants";
 
 

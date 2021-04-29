@@ -1,5 +1,5 @@
 import { addFeedback } from "../../../service/FeedbackService";
-import store from "../store";
+import store from "../../bookingredux/store";
 import addFeedbackConstants from "./addFeedbackConstants.js";
 
 function addFeedbackSuccess(feed) {

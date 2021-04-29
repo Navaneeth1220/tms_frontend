@@ -1,6 +1,6 @@
 
 import { fetchHotelById } from "../../../service/HotelService";
-import store from "../../packageredux/store";
+import store from "../../bookingredux/store";
 import fetchHotelByIdConstants from "./fetchHotelByIdConstants";
 
 function fetchHotelByIdRequest() {
