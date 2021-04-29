@@ -9,11 +9,7 @@ import DisplayBookingList from "./DisplayBookingList";
 
 export default function GetBookingOnUserIdRequest() {
     
-    const userIdRef = React.createRef();
-
-    const initialState = {userId : undefined};
-
-    const [currentState, setNewState]= useState(initialState);
+   
 
     const response = useSelector(state=>{
         return ({
@@ -27,19 +23,12 @@ export default function GetBookingOnUserIdRequest() {
     const submitHandler = (event) => {
 
         event.preventDefault();
-        console.log("current state", currentState);
-        const userId = userIdRef.current.value;
-        dispatch(getBookingOnUserIdRequestAction(userId));
+       
+        dispatch(getBookingOnUserIdRequestAction(1));
 
     }
 
-    const setFieldState = () => {
-
-        const userIdValue = userIdRef.current.value;
-        const newState = { ...currentState, userId: userIdValue, booking: undefined, errMsg: undefined };
-        setNewState(newState);
-        console.log("inside set field state ");
-    }
+   
 
     return (
         <div>
@@ -48,13 +37,8 @@ export default function GetBookingOnUserIdRequest() {
             <div className={style.content}>
                 <form onSubmit={submitHandler} className={style.content}>
 
-                    <div className="form-group">
-                        <label>Enter User Id</label>
-
-                        <input name="userId" type="number" ref={userIdRef} onChange={setFieldState} className="form-control"/>
-                    </div>
-
-                    <button className="btn btn-primary">Get Booking</button>
+                        
+                <button className="btn btn-primary">Get Booking</button>
                 </form>
 
                 {response.booking ? (

@@ -31,13 +31,13 @@ export default function AddBooking(){
     const paymentModeRef = React.createRef();
     const bankNameRef = React.createRef();
     const cardNoRef = React.createRef();
-
+    
 
     const initialState = {
         bookingType : undefined,
         bookingTitle : undefined,
         description : undefined,
-        userId : 4,
+        userId : 1,
         packageId : 8,
         paymentMode : undefined,
         bankName : undefined,
@@ -45,11 +45,13 @@ export default function AddBooking(){
         netAmount : 1000.0,
         paymentStatus : "true",
         routeId : "R1",
-        //formStatus : "",
         validations : {cardNo:undefined, bankName:undefined},
     };
 
     
+
+   
+
 
     const [currentState,setNewState] = useState(initialState);
 
@@ -73,7 +75,9 @@ export default function AddBooking(){
         if(currentState.validations.cardNo || currentState.validations.bankName){
             return;
         }        
+        
         const packageId = parseInt(currentState.packageId);
+        
         
         let data={...currentState,packageId:packageId};
         console.log("form data that has to be sent to service",data);
@@ -81,9 +85,14 @@ export default function AddBooking(){
     };
 
     const setFieldState = (ref) =>{
+       
+        
+
         const fieldName = ref.current.name;
         const fieldValue = ref.current.value;
         console.log("inside set field state field name = "+fieldName+" fieldValue= "+fieldValue);
+
+       
 
         let validationMsg;
 
@@ -98,7 +107,8 @@ export default function AddBooking(){
         const newValidations = { ...currentState.validations, [fieldName]: validationMsg };
 
         const newState = {
-
+           
+            
             ...currentState,
             [fieldName] : fieldValue,
             errMsg : undefined,
@@ -127,7 +137,7 @@ export default function AddBooking(){
             <form onSubmit = {(event)=> submitHandler(event)} className={style}>
                 <div className="form-group">
                     <label>Booking title </label>
-                    <select name = "bookingTitle" id = "title" required ref={bookingTitleRef} onChange={()=>setFieldState(bookingTitleRef)} className="form-control" > 
+                    <select name = "bookingTitle" id = "title" required ref={bookingTitleRef} onChange={()=>setFieldState(bookingTitleRef)} className="form-control"  > 
                     <option value="none" disabled selected hidden>Select booking Title</option> 
                         <option value="weekend">Weekend</option>
                         <option value = "week_vacation">7 day Vacation</option>
@@ -153,10 +163,16 @@ export default function AddBooking(){
                     <select name="packageId"  ref={packageIdRef} onChange={()=>setFieldState(packageIdRef)} className="form-control" required>
                         <option value="none" disabled selected hidden>Select package</option>
                         <option value="10">Goa trip</option>
-                        <option value="12">Andaman Trip</option>
+                        <option value="8">Andaman Trip</option>
                     </select>
                      <br/>
                 </div> }
+
+                <div className="form-group">
+    
+                    <label>Amount </label>
+                    <input name="netAmount" type="number"  className="form-control" disabled/>
+                </div>
 
                 <div className="form-group">
                     <label>Payment Mode </label>

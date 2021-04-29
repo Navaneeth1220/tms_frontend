@@ -6,11 +6,12 @@ import './App.css';
 import AddBooking from './component/Booking/AddBooking';
 import BookingHome from './component/Booking/BookingHome';
 import { Provider } from 'react-redux';
-import BookingNavBar from './component/Booking/BookingNavBar';
+import NavBar from './component/NavBar';
 import GetBookingOnRequest from './component/Booking/GetBookingOnRequest';
 import store from './redux/store';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import GetBookingOnUserIdRequest from './component/Booking/GetBookingOnUserIdRequest'
+import Home from './component/Home'
 
 function App() {
 
@@ -79,14 +80,15 @@ const data = {
       <Provider store={store} >
 
         <Router>
-          <BookingNavBar/>
+          <NavBar/>
             <div className="container" style = {{mariginTop : '50px'}}>
               <div className="row">
                 <div className="col-md-9">
 
 
                   <Switch>
-                    <Route exact path="/" component = {BookingHome} />
+                  <Route exact path="/" component = {Home} />
+                    <Route exact path="/bookinghome" component = {BookingHome} />
                     <Route exact path="/addbooking" component = {AddBooking} />
                     <Route exact path="/bookingdetails" component = {GetBookingOnRequest} />
                     <Route exact path="/useridbooking" component = {GetBookingOnUserIdRequest}/>
