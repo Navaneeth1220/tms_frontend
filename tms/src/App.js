@@ -17,8 +17,8 @@ import FeedBackHome from './component/Feedback/FeedbackHome';
 import ReportHome from './component/reportcomponent/ReportHome';
 import CustomerHome from './component/customer/CustomerHome';
 import PackageHome from './component/packagecomponent/PackageHome';
-import BusHome from './components/Bus/BusHome';
-import RouteHome from './components/Route/RouteHome';
+import BusHome from './component/Bus/BusHome';
+import RouteHome from './component/Route/RouteHome';
 import AddPackage from './component/packagecomponent/AddPackage';
 import AddHotel from './component/hotelcomponent/AddHotel';
 import GetCustomerDetailsPackageId from './component/customer/GetCustomerDetailsPackageId'
@@ -38,18 +38,17 @@ import GetReportDetailsOnRequest from './component/reportcomponent/GetReportDeta
 import AddFeedback from './component/Feedback/AddFeedback'
 import GetFeedbackDetails from './component/Feedback/GetFeedbackDetails'
 import GetFeedbackDetailsCustomerId from './component/Feedback/GetFeedbackDetailsCustomerId'
-import AddBus from './components/Bus/AddBus'
-import GetAllBuses from './components/Bus/GetAllBuses'
-import getBusDetailsonRequest from './components/Bus/getBusDetailsonRequest'
-import GetBusDetailsByParameter from './components/Bus/GetBusDetailsByParameter'
-import CreateRoute from './components/Route/CreateRoute'
-import GetAllRoutes from './components/Route/GetAllRoutes'
-import GetRouteDetailsByParameter from './components/Route/GetRouteDetailsByParameter'
-import getRouteDetailsOnRequest from './components/Route/getRouteDetailsonRequest'
-import fetchBusByRoute from './components/Route/fetchBusByRoute'
-import UpdateRoute from './components/Route/UpdateRoute'
-import { addRoute } from './service/RouteService';
-import FetchBusByRoute from './components/Route/fetchBusByRoute';
+import AddBus from './component/Bus/AddBus'
+import GetAllBuses from './component/Bus/GetAllBuses'
+import getBusDetailsonRequest from './component/Bus/getBusDetailsonRequest'
+import GetBusDetailsByParameter from './component/Bus/GetBusDetailsByParameter'
+import CreateRoute from './component/Route/CreateRoute'
+import GetAllRoutes from './component/Route/GetAllRoutes'
+import GetRouteDetailsByParameter from './component/Route/GetRouteDetailsByParameter'
+import getRouteDetailsOnRequest from './component/Route/getRouteDetailsonRequest'
+import fetchBusByRoute from './component/Route/fetchBusByRoute'
+import UpdateRoute from './component/Route/UpdateRoute'
+
 
 
 
@@ -108,6 +107,7 @@ function App() {
                     <Route exact path="/busdetails/:busId" component={GetBusDetailsByParameter}/>
                     <Route exact path="/addRoute" component={CreateRoute}/>
                     <Route exact path="/allroutes" component={GetAllRoutes}/>
+                    <Route exact path="/routedetails/:routeId" component={GetRouteDetailsByParameter}/>
                     <Route exact path="/routedetailsonrequest" component={getRouteDetailsOnRequest}/>
                     <Route exact path="/fetchbusbyroute" component={fetchBusByRoute}/>
                     <Route exact path="/updateroute" component={UpdateRoute}/>

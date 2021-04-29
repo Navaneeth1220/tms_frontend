@@ -43,7 +43,7 @@ export default function FetchBusByRoute() {
 
     return (
         <div>
-            <h1> Route History</h1>
+            <h1> Buses on this Route</h1>
 
             <div className={style.content}>
                 <form onSubmit={submitHandler} className={style.content}>
