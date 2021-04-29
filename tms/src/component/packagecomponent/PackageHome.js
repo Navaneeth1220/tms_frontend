@@ -1,5 +1,6 @@
 
 import commonStyle from "./commonStyle.module.css";
+import {Link} from "react-router-dom";
 
 export default function PackageHome() {
 
@@ -38,8 +39,7 @@ export default function PackageHome() {
               <Link to="/allpackages" className="nav-link" >
                 <span>Get All Packages</span>
               </Link>
-            </li>*
-
+            </li>
             <li className="nav-item">
 
               <Link to="/packagedetailsonrequest" className="nav-link" >

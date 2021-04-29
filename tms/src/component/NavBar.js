@@ -31,6 +31,15 @@ export default function BookingNavBar(){
 
                             </Link>
                         </li>
+
+                        <li className="nav-item active">
+                        <Link to="/packagehome" className="nav-link" >
+                                <span>Package </span>
+                                <span className="sr-only">(current)</span>
+
+                            </Link>
+                        </li>
+
                         <li className="nav-item active">
                         <Link to="/feedbackhome" className="nav-link" >
                                 <span>Feedback </span>
@@ -40,6 +49,12 @@ export default function BookingNavBar(){
                         <li className="nav-item active">
                         <Link to="/reporthome" className="nav-link" >
                                 <span>Report </span>
+                                <span className="sr-only">(current)</span>
+                        </Link>
+                        </li>
+                        <li className="nav-item active">
+                        <Link to="/customerhome" className="nav-link" >
+                                <span>Customer </span>
                                 <span className="sr-only">(current)</span>
                         </Link>
                         </li>

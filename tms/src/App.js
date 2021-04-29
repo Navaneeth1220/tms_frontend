@@ -15,6 +15,8 @@ import Home from './component/Home'
 import HotelHome from './component/hotelcomponent/HotelHome'
 import FeedBackHome from './component/Feedback/FeedbackHome';
 import ReportHome from './component/reportcomponent/ReportHome';
+import CustomerHome from './component/customer/CustomerHome';
+import PackageHome from './component/packagecomponent/PackageHome';
 
 function App() {
 
@@ -42,6 +44,8 @@ function App() {
                     <Route exact path="/hotelhome" component={HotelHome}/>
                     <Route exact path="/feedbackhome" component={FeedBackHome}/>
                     <Route exact path="/reporthome" component={ReportHome}/>
+                    <Route exact path="/customerhome" component={CustomerHome}/>
+                    <Route exact path="/packagehome" component={PackageHome}/>
                   </Switch>
 
 
