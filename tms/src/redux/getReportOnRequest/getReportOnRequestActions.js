@@ -1,6 +1,6 @@
 
 import { fetchReportById } from "../../service/ReportService";
-import store from "../store";
+import store from "../addReport/store";
 import getReportOnRequestConstants from "./getReportOnRequestConstants";
 
 function getReportOnRequestSuccess(report) {

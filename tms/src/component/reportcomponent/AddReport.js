@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import DisplayReportDetails from "./DisplayReportDetails";
 import commonStyle from "./commonStyle.module.css"
-import validationMessage from '../../validationMesage';
+import validationMessage from '../reportcomponent/validationMesage'
 import { useDispatch, useSelector } from "react-redux";
 import { addReportAction } from "../../redux/addReport/addReportActions";
 
